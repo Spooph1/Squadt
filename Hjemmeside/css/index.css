@@ -38,18 +38,28 @@ body{
 .icontext{
 	color: #ffffff;
 	font-size: 1.2em;
+	text-align: center;
 }
 .side-bar{
 	background-color: var(--side-navbar-color);
 	width: 100px;
 	height: 100vh;
 	position: fixed;
+	
+}
+.side-nav{
+	height: 100vh;
+	position: relative;
 }
 .sidebaricon{
 	background-color: var(--main-navbar-color);
 	border-radius: 50%;
 	width: 80px;
 	height: 80px;
+	margin: 0 auto;
+}
+.iconpics{
+	
 }
 
 
