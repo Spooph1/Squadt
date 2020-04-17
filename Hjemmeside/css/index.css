@@ -12,10 +12,14 @@
 	--mainContainer-background-color: #FFFFFF;
     font-size: 16px;
   }
+* {
+  box-sizing: border-box;
+}
 
 body{
 	background-color: var(--main-background-color);
 }
+header{}
 .top-bar{
 	background: var(--main-navbar-color);
 }
@@ -30,7 +34,7 @@ body{
 	margin-right: 10px;
 }
 #searchbox{
-  width: 350px!important;
+  width: 350px;
   height: 22px;
   background: white;
   border-radius: 20px;
@@ -38,28 +42,99 @@ body{
 .icontext{
 	color: #ffffff;
 	font-size: 1.2em;
-	text-align: center;
 }
 .side-bar{
 	background-color: var(--side-navbar-color);
-	width: 100px;
+	width: 5rem;
 	height: 100vh;
 	position: fixed;
-	
 }
-.side-nav{
-	height: 100vh;
-	position: relative;
-}
+ .side-bar ul li p {
+    margin-left: -0.7rem;
+  }
 .sidebaricon{
 	background-color: var(--main-navbar-color);
 	border-radius: 50%;
-	width: 80px;
-	height: 80px;
-	margin: 0 auto;
+	width: 4rem;
+	height: 4rem;
+	margin-top: 1rem;
+    padding: 5% 0;
+    margin-left: -0.7rem;
 }
-.iconpics{
-	
+  .sidebaricon img {
+    padding: 15% 0;
+    width: 70%;
+  }
+
+main {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: [col-1] 2fr [col-2] minmax(300px, 1fr);
+  height: 100vh;
 }
+  main div {
+    background-color: var(--main-background-color);
+    overflow-y: scroll;
+    margin: 1rem;
+  }
+  main div::-webkit-scrollbar {
+    display: none;
+  }
+  main div {
+    -ms-overflow-style: none;
+  }
+  /* ////////// kolonne 1 ///////// */
+  .column-1 {
+    grid-column: 1;
+    margin-left: 6rem;
+  }
+  .content {
+    width: 100%;
+    margin-left: auto;
+    background: var(--container-background-color);
+    border-radius: 20px;
+    position: relative;
+  }
+  .content::after {
+    content: "";
+    position: absolute;
+    background: var(--main-orange-color);
+    width: 0.25rem;
+    height: 5rem;
+    border-radius: 2px;
+    left: 0px;
+    top: 1rem;
+  }
+  .content .billede {
+    background-color: var(--main-navbar-color);
+    border-radius: 50%;
+  	width: 5rem;
+  	height: 5rem;
+  }
+  .content p, h2 {
+    margin-left: 1rem;
+  }
+
+  /* ////////// kolonne 2 ///////// */
+  .column-2 {
+    grid-column: 2;
+  }
+    /* progression */
+    .progression-container {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 25px;
+    }
+
+    .progression-bar {
+      width: 50%;
+      height: 15px;
+      border-radius: 25px;
+      background-color: #4CAF50;
+      text-align: center;
+      color: white;
+    }
+
+
 
 
