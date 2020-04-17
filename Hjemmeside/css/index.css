@@ -19,7 +19,9 @@
 
 body{
 	background-color: var(--main-background-color); /* Setting main background color */
+    position: fixed
 }
+
 header{}
 
 /* ///// Top navigational bar styling ///// */
