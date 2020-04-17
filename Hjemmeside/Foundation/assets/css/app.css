@@ -666,7 +666,7 @@ li {
   font-size: inherit; }
 
 ul {
-  margin-left: 1.25rem;
+  margin-left: none;
   list-style-type: disc; }
 
 ol {
