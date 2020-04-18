@@ -97,15 +97,14 @@ main {
     left: 0.3rem;
   }
   .searchbox-wrapper{
-    width: 350px; /* Setting search bar width */
+    width: 100%; /* Setting search bar width */
     height: 22px; /* Setting search bar height */
     background-color: #fff; /* Setting background for search field */
     border-radius: 20px; /* Adding rounded corners to the search field */
-
     margin-right: 1rem;
   }
   .searchbox-wrapper input {
-    width: 97%;
+    width: 95%;
     margin-left: 0.4rem;
   }
   .menuicons{
@@ -117,7 +116,7 @@ main {
     .topbar-groups {
       grid-area: recommended;
       background-color: var(--container-background-color);
-      margin: 1rem 1rem 0rem 6rem;
+      margin: 1rem 1rem -1rem 6rem;
       border-radius: 20px;
       display: flex;
       flex-direction: row;
@@ -137,45 +136,90 @@ main {
     margin-left: 6rem;
   }
   .column-1 h1 {
-    position: fixed;
   }
   .posts-wrapper {
     overflow-y: scroll;
     height: 100vh;
-    margin-top: 5rem;
-
+    margin-top: 0rem;
   }
-    .posts-wrapper::-webkit-scrollbar {
-      display: none;
+  .posts-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .posts-wrapper {
+    -ms-overflow-style: none;
+  }
+    .content {
+      background-color: var(--container-background-color);
+      box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+      width: 100%;
+      border-radius: 20px;
+      position: relative;
+      margin-top: 1.5rem;
     }
-    .posts-wrapper {
-      -ms-overflow-style: none;
+    .content:first-child {
+      margin-top: 0rem;
     }
-      .content {
-        background-color: var(--container-background-color);
-        width: 100%;
-        border-radius: 20px;
-        position: relative;
+      /*  rød tag */
+      .content::after {
+        content: "";
+        position: absolute;
+        background: var(--main-orange-color);
+        width: 0.25rem;
+        height: 5rem;
+        border-radius: 2px;
+        left: 0px;
+        top: 1rem;
       }
-        .content::after {
-          content: "";
-          position: absolute;
-          background: var(--main-orange-color);
-          width: 0.25rem;
-          height: 5rem;
-          border-radius: 2px;
-          left: 0px;
-          top: 1rem;
+      .content-top {
+        display: flex;
+        flex-direction: row;
+      }
+        .content-top ul {
+          list-style: none;
+          padding: 0;
+          margin-left: 6rem;
+          margin-top: 0rem;
+          margin-right: 1rem;
+          justify-content: center;
         }
-        .billede {
+        .top-billede {
+          position: absolute;
           background-color: var(--main-navbar-color);
           border-radius: 50%;
-        	width: 5rem;
-        	height: 5rem;
+          width: 5rem;
+          height: 5rem;
+          margin-left: 0.5rem;
+          margin-top: 1rem;
         }
-        .content p, h3, .billede {
-          margin-left: 1rem;
+        .content-top h3 {
+
+        }
+      .content hr {
+        margin-top: -1rem;
+      }
+      .content-comment {
+        display: flex;
+        flex-direction: row;
+      }
+        .comment-billede {
+          position: absolute;
+          background-color: var(--main-navbar-color);
+          border-radius: 50%;
+          width: 3rem;
+          height: 3rem;
+          margin-left: 2.5rem;
+          margin-top: 1rem;
+        }
+        .content-comment ul {
+          list-style: none;
+          padding: 0;
+          margin-left: 6rem;
+          margin-top: -0.5rem;
           margin-right: 1rem;
+          justify-content: center;
+        }
+        .content-comment h5 {
+          margin-bottom: 0rem;
         }
 
   /* ////////// kolonne 1 ///////// */
@@ -183,14 +227,24 @@ main {
     grid-area: sidebar;
     margin-right: 1rem;
   }
+    .traingingGoal-wrapper {
+      background-color: var(--container-background-color);
+      box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+      width: 100%;
+      border-radius: 20px;
+      position: relative;
+      min-height: 80px;
+      display: flex;
+      justify-content: center;
+    }
     /* progression */
     .progression-container {
       margin-top: 1rem;
-      width: 100%;
+      position: absolute;
+      width: 95%;
       border-radius: 25px;
       background-color: var(--mainContainer-background-color);
     }
-
     .progression-bar {
       width: 50%;
       height: 15px;
@@ -200,8 +254,25 @@ main {
       line-height: 1rem;
       color: white;
     }
+    .traingingGoal-wrapper button {
+      margin-top: 2rem;
+      background-color: var(--main-orange-color);
+      /* copieret fra w3s - midlertidig knap*/
+      border: none;
+      color: white;
+      padding: 0 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
 @media only screen and (max-width: 800px) {
+  body{
+    overflow: scroll;
+  }
   .sidebar-wrapper {
+    overflow-y:hidden;
     flex-direction: row;
     width: 100vw;
     height: 5rem;
