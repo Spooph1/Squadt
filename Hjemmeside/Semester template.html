@@ -4,107 +4,85 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Semesterprojekt template</title>
-	<link rel="stylesheet" href="Foundation/assets/css/app.css">
 	<link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-	<header> <!-- Top bar -->
-		<div class="top-bar"> <!-- Top bar container -->
-			<div class="top-bar-left"> <!-- left top bar container -->
-				<ul class="menu vertical"> <!-- Unordered list to store logo element -->
-					<li class="menu-text, logo">SQUADT</li> <!-- Logo creation -->
-				</ul>
-			</div>
-			<div class="top-bar-right"> <!-- Right top bar container -->
-				<ul class="menu"> <!-- Unordered list to store multiple elements -->
-					<li><input type="search" placeholder="Search" id="searchbox"></li> <!-- Search field -->
-					<li><img src="img/SettingsIcon.png" class="menuicons"></li> <!-- Settings icon -->
-					<li><img src="img/LogOutIcon.png" class="menuicons"></li> <!-- LogOut icon -->
-				</ul>
-			</div>
-		</div>
-		 <!-- Side bar -->
-		<div class="side-bar text-center"> <!-- Full side bar container -->
-			<ul class="side-nav" style="list-style-type: none;"> <!-- Unordered list to keep navigational elements -->
-				<li>
-					<div id="homeicon" class="sidebaricon"> <!-- Home icon container -->
-						<img src="img/Homeicon.png" > <!-- Home icon -->
-					</div>
-					<div id="hometext"> <!-- Home text container -->
-						<p class="icontext">Home</p> <!-- Home text -->
-					</div>
-				</li>
-				<li>
-				<div id="groupicon" class="sidebaricon"> <!-- Group icon container -->
-						<img src="img/Groupsicon.png" > <!-- Group icon -->
-					</div>
-					<div id="grouptext"> <!-- Group text container -->
-						<p class="icontext">Groups</p> <!-- Group icon -->
-					</div>
-				</li>
-				<li>
-				<div id="chaticon" class="sidebaricon"> <!-- Chat icon container -->
-						<img src="img/Chaticon.png"> <!--  Chat icon -->
-					</div>
-					<div id="chattext"> <!-- Chat text container -->
-						<p class="icontext">Chat</p> <!-- Chat text -->
-					</div>
-				</li>
-				<li>
-					<div id="profileicon" class="sidebaricon"> <!-- profile icon container -->
-						<img src="img/Profileicon.png"> <!-- Profile icon -->
-					</div>
-					<div id="profiletext"> <!-- Profile text container -->
-						<p class="icontext">Profile</p> <!-- Profile text -->
-					</div>
-				</li>
+	<header> <!-- Side bar -->
+		<div class="sidebar-wrapper"> <!-- Full side bar container -->
+			<ul> <!-- Unordered list to keep navigational elements -->
+				<li><img src="img/Homeicon.png"><p>Home</p> </li> <!-- Home icon container -->
+				<li><img src="img/Groupsicon.png"><p>Groups</p></li> <!-- Group icon container -->
+				<li><img src="img/Chaticon.png"><p>Chat</p></li> <!-- Chat icon container -->
+				<li><img src="img/Profileicon.png"><p>Profile</p></li> <!-- profile icon container -->
 			</ul>
 		</div>
 	</header>
 	<main>
+		<div class="top-bar">
+			<ul>
+				<li class="logo">SQUADT</li>
+				<li><div class="searchbox-wrapper"><input type="search" placeholder="Search"></div></li>
+				<li><img src="img/SettingsIcon.png" class="menuicons"></li>
+				<li><img src="img/LogOutIcon.png" class="menuicons"></li>
+			</ul>
+		</div>
+
+		<div class="topbar-groups">
+			<div class="groups"></div><div class="groups"></div><div class="groups"></div><div class="groups"></div><div class="groups"></div><div class="groups"></div>
+			<div class="groups"></div><div class="groups"></div><div class="groups"></div><div class="groups"></div><div class="groups"></div><div class="groups"></div>
+		</div>
 		<!-- ////////// kolonne 1 ///////// -->
 		<div class="column-1">
-			<div class="content">
-				<div class="billede"></div>
-				<h2>Navn på person</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="content">
-				<div class="billede"></div>
-				<h2>Navn på person</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="content">
-				<div class="billede"></div>
-				<h2>Navn på person</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="content">
-				<div class="billede"></div>
-				<h2>Navn på person</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="content">
-				<div class="billede"></div>
-				<h2>Navn på person</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h1>Gruppens Navn</h1>
+			<div class="posts-wrapper">
+				<div class="content">
+					<div class="billede"></div>
+					<h3>Navn på person</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="content">
+					<div class="billede"></div>
+					<h3>Navn på person</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="content">
+					<div class="billede"></div>
+					<h3>Navn på person</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="content">
+					<div class="billede"></div>
+					<h3>Navn på person</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="content">
+					<div class="billede"></div>
+					<h3>Navn på person</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="content">
+					<div class="billede"></div>
+					<h3>Navn på person</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
 			</div>
 		</div>
-		<!-- ////////// kolonne 2 ///////// -->
+		 <!-- ////////// kolonne 2 ///////// -->
 		<div class="column-2">
-			<div class="content">
+			<h2>Træningsmål</h2>
 				<div class="progression-container">
 					<div class="progression-bar">50%</div>
 				</div>
 				<br>
 				<button id="progressbar-click">Click Me</button>
-			</div>
 		</div>
+		-->
 	</main>
-<script src="javascript/index.js" charset="utf-8"></script> <!-- Loading JavaScript -->
-<script src="jquery/jquery.js"></script> <!-- Loading jQuery -->
-<script src="Foundation/assets/js/app.js"></script> <!-- Loading Foundation -->
+
+	<script src="javascript/index.js" charset="utf-8" defer></script>
+	<script src="jquery/jquery.js" ></script>
+	<script src="Foundation/assets/js/app.js" defer></script>
 	<script type="text/javascript">
 	$(()=> {
 		var value = 70; // et tal i procent
