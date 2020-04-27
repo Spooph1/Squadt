@@ -10,6 +10,8 @@
 	  --body-text-color: #5A5A5A;
 	  --container-background-color: #F5F5F5;
 	  --mainContainer-background-color: #FFFFFF;
+    --h2-color: #4c5154;
+    --content-span-color: grey;
     font-size: 16px;
   }
 /* ////////// default ///////// */
@@ -110,37 +112,40 @@ main {
   .menuicons{
     height: 24px; /* Setting height for top bar icons */
     margin-left: 15px; /* Setting left margin for top bar icons */
-    margin-right: 1rem; /* Setting right margin for top bar icons */
+    margin-right: 1.5rem; /* Setting right margin for top bar icons */
   }
     /* ////////// foreslåede grupper ///////// */
     .topbar-groups {
       grid-area: recommended;
       background-color: var(--container-background-color);
-      margin: 1rem 1rem -1rem 6rem;
+      box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+      margin: 2rem 1.5rem -1rem 6.5rem;
       border-radius: 20px;
       display: flex;
       flex-direction: row;
       height: 4rem;
-      justify-content: space-around;
+      justify-content:flex-start;
       align-items: center;
+      overflow-x: scroll;
     }
     .groups {
       background-color: var(--main-navbar-color);
       border-radius: 50%;
-    	width: 3rem;
+    	min-width: 3rem;
     	height: 3rem;
+      margin-left: 1rem;
     }
   /* ////////// kolonne 1 ///////// */
   .column-1 {
     grid-area: main;
-    margin-left: 6rem;
+    margin-left: 6.5rem;
   }
   .column-1 h1 {
+    margin: 0rem 1rem 1rem 0.5rem;
   }
   .posts-wrapper {
     overflow-y: scroll;
     height: 100vh;
-    margin-top: 0rem;
   }
   .posts-wrapper::-webkit-scrollbar {
     display: none;
@@ -186,13 +191,16 @@ main {
           position: absolute;
           background-color: var(--main-navbar-color);
           border-radius: 50%;
-          width: 5rem;
-          height: 5rem;
-          margin-left: 0.5rem;
+          width: 4rem;
+          height: 4rem;
+          margin-left: 1.5rem;
           margin-top: 1rem;
         }
         .content-top h3 {
-
+          margin-bottom: 0.2rem;
+        }
+        .content-top span {
+          color: var(--content-span-color);
         }
       .content hr {
         margin-top: -1rem;
@@ -225,8 +233,127 @@ main {
   /* ////////// kolonne 1 ///////// */
   .column-2 {
     grid-area: sidebar;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
   }
+    .session-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .column-2 h2 {
+      margin: 0.6rem 1rem 1rem 0.5rem;
+      color: var(--h2-color);
+    }
+      .add-session {
+        background-color: var(--container-background-color);
+        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+        min-width: 8rem;
+        border-radius: 20px;
+        height: 2rem;
+        position: relative;
+        cursor: pointer;
+      }
+      .add-session::after {
+        content: '\002B'; /* css entities : svarer til ' + ' */
+        color: var(--h2-color);
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 0rem;
+      }
+      .add-session p {
+        color: var(--h2-color);
+        position: absolute;
+        font-size: 0.8rem;
+        bottom: -0.3rem;
+        margin-left: 0.7rem;
+      }
+        /* popup modul (background) */
+        .modul-wrapper {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        /* Modal Content */
+        .modul-content-wrapper {
+          position: relative;
+          background-color: var(--container-background-color);
+          box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+
+          border-radius: 20px;
+          margin: auto;
+          padding: 0;
+          border: 1px solid #888;
+          width: 80%;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+          -webkit-animation-name: animatetop;
+          -webkit-animation-duration: 0.4s;
+          animation-name: animatetop;
+          animation-duration: 0.4s;
+          cursor: default;
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+          from {top:-300px; opacity:0}
+          to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+          from {top:-300px; opacity:0}
+          to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .close {
+          color: white;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .modal-header {
+          padding: 2px 16px;
+          background-color: #5cb85c; /* slet */
+          color: white;
+        }
+
+        .modal-body {padding: 2px 16px;}
+
+        .modal-footer {
+          padding: 2px 16px;
+          background-color: #5cb85c; /* slet */
+          color: white;
+        }
+        /* end */
+
+    .traingingSessions-wrapper {
+      background-color: var(--container-background-color);
+      box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+      width: 100%;
+      border-radius: 20px;
+      position: relative;
+      min-height: 80px;
+      margin-bottom: 3rem;
+    }
+
     .traingingGoal-wrapper {
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
@@ -286,11 +413,11 @@ main {
     }
     .sidebar-wrapper ul li {
       float: left;
-      margin-top: -0.7rem;
+      margin-top: 0rem;
       margin-left: 2rem;
     }
     .sidebar-wrapper ul li:first-child {
-      margin-top: -0.7rem;
+      margin-top: 0rem;
       margin-left: 0rem;
     }
     .sidebar-wrapper ul li p {

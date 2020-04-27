@@ -35,12 +35,14 @@
 		<!-- ////////// kolonne 1 ///////// -->
 		<div class="column-1">
 			<h1>Gruppens Navn</h1>
+
 			<div class="posts-wrapper">
 				<div class="content">
 						<div class="content-top">
 							<div class="top-billede"></div>
 							<ul>
 								<li><h3>Navn på person</h3></li>
+								<li><span>Time: 13:30</span> </li>
 								<li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li>
 							</ul>
 						</div>
@@ -107,6 +109,29 @@
 		</div>
 		 <!-- ////////// kolonne 2 ///////// -->
 		<div class="column-2">
+			<div class="session-wrapper">
+				<h2>Gruppens træninger</h2>
+				<div class="add-session" id="add-session-popup">
+					<p>Add training</p>
+					<!-- The Modal -->
+					<div class="modul-wrapper">
+						<!-- Modal content -->
+						<div class="modul-content-wrapper">
+					    <div class="modal-header">
+					      <span class="close">&times;</span>
+					      <h2>Modal Header</h2>
+					    </div>
+					    <div class="modal-body">
+					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					    </div>
+					  </div>
+					</div>
+
+				</div>
+			</div>
+			<div class="traingingSessions-wrapper">
+			</div>
+
 			<h2>Træningsmål</h2>
 			<div class="traingingGoal-wrapper">
 				<div class="progression-container">
@@ -116,7 +141,7 @@
 				<button id="progressbar-click">Click Me</button>
 			</div>
 		</div>
-		-->
+
 	</main>
 
 	<script src="javascript/index.js" charset="utf-8" defer></script>
@@ -145,8 +170,24 @@
 						// beregn procent fra 100 -> width
 						$(".progression-bar").html(currentWidthPercent+"%");
 					}
-				}
-	}})});
+				}}})
+		// Get the modal
+		var modul = $(".modul-content-wrapper");
+		// Get the <span> element that closes the modal
+		var close = $(".close");
+		// Get the button that opens the modal
+		$("#add-session-popup").click(()=>{
+			$(modul).css("display, block");
+		})
+		$(closeButton).click(()=>{
+			$(modul).css("display, none");
+		})
+		$(window).click(()=>{
+			if (event.target == modul || event.target == close) {
+				$(modul).css("display, none");
+			}
+		})
+	});
 	</script>
 </body>
 </html>
