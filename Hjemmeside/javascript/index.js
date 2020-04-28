@@ -1,6 +1,9 @@
 // JavaScript Document
+    var fs = require('fs');
+    var usersData = fs.readFileSync('userData.json');
+    var userData = JSON.parse(usersData);
+
 	var users = [];
-	
 	class User{
 		constructor(name, username, birthday, fitnesscenter, usernumber){
 			this.name = name;
@@ -12,6 +15,7 @@
 				users.push(this);
 			}
 			this.pushToArray();
+            
 		}
 	}
 	
@@ -21,7 +25,6 @@
 	new User("Simon Helsted Juul", "Juulemand", 090897, "Sats Nyborgvej", users.length + 1);
 	new User("Cecilie Nedergaard-Rasmussen", "Den smukkeste af dem alle", 120699, "SDU Fitness", users.length + 1);
 	new User("Idefix", "Id", 161007, "Baghaven", users.length + 1);
-
 
 	var groups = [];
 	class Group{
