@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* CSS Document */
+:root {
+    --fonts: 'Open Sans', sans-serif;
+    --main-background-color: #DBDDE0; /* light grey */
+	  --main-navbar-color: #122133; /* dark grey blueish */
+	  --side-navbar-color: #45505f;
+    --main-orange-color: #E85F41;
+    --headline-text-color: #3B3B3B;
+	  --body-text-color: #5A5A5A;
+	  --container-background-color: #F5F5F5;
+	  --mainContainer-background-color: #FFFFFF;
+    --h2-color: #4c5154;
+    --content-span-color: grey;
+    font-size: 16px;
+  }
+/* ////////// default ///////// */
+body{
+	background-color: var(--side-navbar-color);
+  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif; /* OBS DENNE FONT? */
+  color: #666; /* font farve */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+h1, h2, h3, h4 {
+  font-weight: 400;
+}
+h1 {
+  color: var(--main-orange-color)
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+
+  .container-wrapper {
+    margin-top: 10rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    height: clamp(500px, 50vh, 50vh);
+    width: 70vw;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+  }
+    .picture-fitness {
+      width: 400px;
+      height: 100%;
+      z-index: 0;
+      background-color: var(--main-orange-color);
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      position: relative;
+    }
+      .picture-fitness img {
+        position: absolute;
+        height: 100%;
+        right: -10rem;
+      }
+    .formular-wrapper {
+      flex-grow: 1;
+      height: 100%;
+      z-index: 1;
+      background-color: var(--container-background-color);
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+      .formular-wrapper div {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+      }
+      .formular-wrapper div div {
+        margin-left: 0rem;
+        margin-right: 0rem;
+        margin-top: 1rem;
+      }
+        .formular {
+          display: grid;
+          grid-template: "column1 column2";
+        }
+          label {
+            font-size: 1rem;
+            color: var(--body-text-color);
+            text-transform: capitalize; /* skriver første bogstav med stort */
+            display: block;
+            margin-bottom: 5px;
+            position: relative;
+          }
+          label:hover {
+            color: var(--main-orange-color);
+          }
+          /* evt 'streg' som i grupper
+
+          label::after {
+            content: "";
+            position: absolute;
+            background: var(--content-span-color);
+            width: 0.2rem;
+            height: 2.5rem;
+            border-radius: 2px;
+            top: 2.3rem;
+            left: -0rem;
+          }
+          */
+        input {
+          outline: none; /* markør udenom input felt */
+          border: none; /* skygge udenom input felt */
+          line-height: 50px; /* højden på felt */
+          background: var(--mainContainer-background-color);
+/* inset dæmpet invendig skygge */
+          border-radius: 5px;
+          padding: 0 20px; /* rygger input ind, så det ikke er helt ud til kanten */
+          font-size: 1rem;
+          color: var(--body-text-color); /* input font farve */
+        }
+
+
+@media only screen and (max-width: 1000px) {
+  .picture-fitness {
+    display: none;
+  }
+  .formular-wrapper {
+    border-radius: 20px;
+  }
+
+}

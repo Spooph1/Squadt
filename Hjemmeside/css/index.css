@@ -286,9 +286,9 @@ main {
         /* Modal Content */
         .modul-content-wrapper {
           position: relative;
+          display: flex;
           background-color: var(--container-background-color);
           box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-
           border-radius: 20px;
           margin: auto;
           padding: 0;
@@ -312,6 +312,13 @@ main {
           from {top:-300px; opacity:0}
           to {top:0; opacity:1}
         }
+        .modal-header {
+          padding: 2px 16px;
+          background-color: #5cb85c; /* slet */
+          color: white;
+        }
+
+        .modal-body {padding: 2px 16px;}
 
         /* The Close Button */
         .close {
@@ -327,20 +334,6 @@ main {
           color: #000;
           text-decoration: none;
           cursor: pointer;
-        }
-
-        .modal-header {
-          padding: 2px 16px;
-          background-color: #5cb85c; /* slet */
-          color: white;
-        }
-
-        .modal-body {padding: 2px 16px;}
-
-        .modal-footer {
-          padding: 2px 16px;
-          background-color: #5cb85c; /* slet */
-          color: white;
         }
         /* end */
 

@@ -172,21 +172,22 @@
 					}
 				}}})
 		// Get the modal
-		var modul = $(".modul-content-wrapper");
+		var modul = $(".modul-wrapper");
 		// Get the <span> element that closes the modal
 		var close = $(".close");
 		// Get the button that opens the modal
 		$("#add-session-popup").click(()=>{
-			$(modul).css("display, block");
+			$(modul).css("display","block");
 		})
-		$(closeButton).click(()=>{
-			$(modul).css("display, none");
+		$(close).click(()=>{
+			$(modul).css("display","none");
 		})
+		/*
 		$(window).click(()=>{
 			if (event.target == modul || event.target == close) {
-				$(modul).css("display, none");
+				$(modul).css("display","none");
 			}
-		})
+		}) */
 	});
 	</script>
 </body>
