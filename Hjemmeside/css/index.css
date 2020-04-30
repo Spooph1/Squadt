@@ -23,8 +23,9 @@ body{
   padding: 0;
   overflow: hidden;
 }
-h1 {
+h1, h2 {
   color: black;
+  font-weight: 400;
 }
 /* ////////// side menu ///////// */
 .sidebar-wrapper {
@@ -50,7 +51,7 @@ h1 {
   width: 4rem; /* Setting background width */
   height: 4rem; /* Setting background height */
   margin-top: 3rem; /* Dropping the icons down from the top */
-  line-height: 1.2rem;
+  line-height: 1rem;
   align-items: center; /* The icons text are now centered */
   text-align: center;
 }
@@ -92,6 +93,9 @@ main {
     list-style-type: none;
     float: left;
   }
+  .top-bar ul li:nth-child(3) {
+    margin-left: 1rem;
+  }
   .logo{
     font-size: 1.2em; /* Setting text logo font size */
     color: #fff; /* Setting text logo color */
@@ -111,7 +115,7 @@ main {
   }
   .menuicons{
     height: 24px; /* Setting height for top bar icons */
-    margin-left: 15px; /* Setting left margin for top bar icons */
+    margin-left: 0rem; /* Setting left margin for top bar icons */
     margin-right: 1.5rem; /* Setting right margin for top bar icons */
   }
     /* ////////// foreslåede grupper ///////// */
@@ -126,7 +130,7 @@ main {
       height: 4rem;
       justify-content:flex-start;
       align-items: center;
-      overflow-x: scroll;
+      overflow-x: auto;
     }
     .groups {
       background-color: var(--main-navbar-color);

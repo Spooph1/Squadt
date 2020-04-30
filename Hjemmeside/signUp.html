@@ -19,6 +19,7 @@
 				<div class="formular-header">
 					<h1>Sign up</h1>
 					<h3>Some motivating words for signing up</h3>
+					<a href="SemesterGruppe.html"><img src="img/close.png" alt=""></a>
 				</div>
 					<div class="formular">
 						<div class="firstName">
@@ -55,10 +56,30 @@
 						</div>
 					</div>
 				<div class="formular-footer">
-					<!-- next button -->
+					<h3>Click here when you are done</h3>
+					<img src="img/forward.svg" alt="no image">
 				</div>
+
+				<div class="signedUp"></div>
 			</div>
 		</div>
 	</main>
+	<script src="jquery/jquery.js" ></script>
+	<script>
+		$(()=> {
+			var footerButton = $(".formular-footer");
+			$(footerButton).click(()=>{
+				$(".formular").fadeOut();
+				$(".picture-fitness").css("z-index","10");
+				$(".formular-wrapper").css("background-color", "var(--main-orange-color)");
+				$(".formular-wrapper h1").css("color", "white").text("Welcome!");
+				$(".formular-header h3").css("color", "var(--h2-color)").text("You have joined our community!");
+				$(".formular-footer").fadeOut();
+				setTimeout(()=>{
+					window.location.href = "SemesterGruppe.html";
+				}, 2000);
+			})
+		});
+	</script>
 </body>
 </html>
