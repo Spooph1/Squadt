@@ -114,15 +114,22 @@
 				<div class="add-session" id="add-session-popup">
 					<p>Add training</p>
 					<!-- The Modal -->
-					<div class="modul-wrapper">
+					<div class="modal-wrapper">
 						<!-- Modal content -->
-						<div class="modul-content-wrapper">
+						<div class="modal-content-wrapper">
 					    <div class="modal-header">
-					      <span class="close">&times;</span>
+					      <div class="close-modal"></div>
 					      <h2>Modal Header</h2>
 					    </div>
 					    <div class="modal-body">
-					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<div class="time">
+								<label>When do you want to train?</label>
+								<input class="text-input" type="text" name="time">
+							</div>
+							<div class="location">
+								<label>Where is the location?</label>
+								<input class="text-input" type="text" name="location">
+							</div>
 					    </div>
 					  </div>
 					</div>
@@ -130,6 +137,14 @@
 				</div>
 			</div>
 			<div class="traingingSessions-wrapper">
+				<div class="training">
+					<ul>
+						<li><h3>Today</h3></li>
+						<li><span>Time: 13:30</span> </li>
+						<li>5 deltager</li>
+						<li>Tryk for at deltage</li>
+					</ul>
+				</div>
 			</div>
 
 			<h2>Træningsmål</h2>
@@ -137,9 +152,9 @@
 				<div class="add-session" id="add-session-popup">
 					<p>Add Group-goal</p>
 					
-					<div class="modul-wrapper">
+					<div class="modal-wrapper">
 						
-						<div class="modul-content-wrapper">
+						<div class="modal-content-wrapper">
 						<div class="modal-header">
 						<span class="close">&times;</span>
 						<h2>Modal Header</h2>
@@ -191,20 +206,18 @@
 					}
 				}}})
 		// Get the modal
-		var modul = $(".modul-wrapper");
-		// Get the <span> element that closes the modal
-		var close = $(".close");
+		var modal = $(".modal-wrapper");
 		// Get the button that opens the modal
 		$("#add-session-popup").click(()=>{
-			$(modul).css("display","block");
+			$(modal).css("display","block");
 		})
-		$(close).click(()=>{
-			$(modul).css("display","none");
+		$(".close-modal").click(()=>{
+			$(modal).css("display","none");
 		})
 		/*
 		$(window).click(()=>{
-			if (event.target == modul || event.target == close) {
-				$(modul).css("display","none");
+			if (event.target == modal || event.target == close) {
+				$(modal).css("display","none");
 			}
 		}) */
 	});

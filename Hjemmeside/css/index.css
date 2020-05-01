@@ -273,8 +273,8 @@ main {
         bottom: -0.3rem;
         margin-left: 0.7rem;
       }
-        /* popup modul (background) */
-        .modul-wrapper {
+        /* popup modal (background) */
+        .modal-wrapper {
           display: none; /* Hidden by default */
           position: fixed; /* Stay in place */
           z-index: 1; /* Sit on top */
@@ -283,14 +283,13 @@ main {
           top: 0;
           width: 100%; /* Full width */
           height: 100%; /* Full height */
-          overflow: auto; /* Enable scroll if needed */
           background-color: rgb(0,0,0); /* Fallback color */
           background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
         /* Modal Content */
-        .modul-content-wrapper {
+        .modal-content-wrapper {
           position: relative;
-          display: flex;
+          display: block;
           background-color: var(--container-background-color);
           box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
           border-radius: 20px;
@@ -304,42 +303,47 @@ main {
           animation-name: animatetop;
           animation-duration: 0.4s;
           cursor: default;
+          padding: 1rem;
         }
-
-        /* Add Animation */
-        @-webkit-keyframes animatetop {
-          from {top:-300px; opacity:0}
-          to {top:0; opacity:1}
-        }
-
-        @keyframes animatetop {
-          from {top:-300px; opacity:0}
-          to {top:0; opacity:1}
-        }
-        .modal-header {
-          padding: 2px 16px;
-          background-color: #5cb85c; /* slet */
-          color: white;
-        }
-
-        .modal-body {padding: 2px 16px;}
-
-        /* The Close Button */
-        .close {
-          color: white;
-          float: right;
-          font-size: 28px;
-          font-weight: bold;
-          cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-          color: #000;
-          text-decoration: none;
-          cursor: pointer;
-        }
-        /* end */
+          .modal-header {
+            width: 100%;
+            height: 3rem;
+            padding-bottom: 2rem;
+            position: relative;
+          } 
+            .close-modal {
+              position: absolute;
+              content: '\002B';
+              width: 1rem;
+              height: 1rem;
+            }
+          .modal-body {
+            width: 100%;
+            margin-bottom: 1rem;
+            display: grid;
+            grid-template: "column1 column2";
+            grid-gap: 1rem;
+          }
+            label {
+              font-size: 1rem;
+              color: var(--body-text-color);
+              text-transform: capitalize; /* skriver første bogstav med stort */
+              display: block;
+              
+            }
+            label:hover {
+              color: var(--main-orange-color);
+            }
+            input {
+              border: none; /* skygge udenom input felt */
+              line-height: 3.1rem; /* højden på felt */
+              background: var(--mainContainer-background-color);
+    /* inset dæmpet invendig skygge */
+              border-radius: 5px;
+              padding: 0 1rem; /* rygger input ind, så det ikke er helt ud til kanten */
+              font-size: 1rem;
+              color: var(--body-text-color); /* input font farve */
+            }
 
     .traingingSessions-wrapper {
       background-color: var(--container-background-color);
@@ -347,9 +351,19 @@ main {
       width: 100%;
       border-radius: 20px;
       position: relative;
-      min-height: 80px;
+      height: auto;
+      padding: 0.1rem;
       margin-bottom: 3rem;
     }
+      .training {
+        background-color: var(--mainContainer-background-color);
+        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+        width: 90%;
+        height: auto;
+        border-radius: 15px;
+        margin-left: 1rem;
+        position: relative;
+      }
 
     .traingingGoal-wrapper {
       background-color: var(--container-background-color);
@@ -367,7 +381,7 @@ main {
       position: absolute;
       width: 95%;
       border-radius: 25px;
-      background-color: var(--mainContainer-background-color);
+      background-color: var(--container-background-color);
     }
     .progression-bar {
       width: 50%;
