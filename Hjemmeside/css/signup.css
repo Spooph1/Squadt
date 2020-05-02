@@ -16,7 +16,7 @@
   }
 /* ////////// default ///////// */
 body{
-	background-color: var(--side-navbar-color);
+	background-color: var(--main-background-color);
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif; /* OBS DENNE FONT? */
   color: #666; /* font farve */
   margin: 0;
