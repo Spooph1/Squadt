@@ -25,80 +25,97 @@ body{
 h1, h2, h3, h4 {
   font-weight: 400;
 }
-h1 {
-  color: var(--main-orange-color)
-}
 main {
   display: flex;
   justify-content: center;
-}
 
+}
   .container-wrapper {
     margin-top: 2rem;
-    min-height: 570px;
-    width: auto;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    height: 580px;
+    width: 900px;
+    background-color: var(--main-orange-color);
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+    border-radius: 20px;
+    position: relative;
   }
     .picture-fitness {
-      width: 400px;
-      height: auto;
-      z-index: 0;
+      float: left;
+      z-index: 1;
       background-color: var(--main-orange-color);
-      border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
-      position: relative;
+      border-radius: 20px;
+      width: 320px;
+      height: 100%;
+      position: absolute;
+      overflow-x: hidden;
     }
       .picture-fitness img {
         position: absolute;
         height: 100%;
-        right: -10rem;
+        left: -20rem;
       }
     .formular-wrapper {
-      flex-grow: 1;
-      z-index: 1;
+      margin-left: 320px;
+      width: 580px;
+      height: 100%;
       background-color: var(--container-background-color);
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
     }
-      .formular-wrapper div {
-        margin-left: 2.5rem;
-        margin-right: 2.5rem;
+      .formular-wrapper > div {
+        margin-left: 2rem;
+        margin-right: 1rem;
       }
-      .formular-wrapper div div {
-        margin: 0rem 0rem 0rem 0rem;
-      }
+        /* header - sign up / log in / gå ud */
         .formular-header {
-          position: relative;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
           cursor: default;
+          margin-bottom: 0rem;
         }
-          .formular-header img {
-            position: absolute;
+          .formular-header img { 
+            margin-right: 1.3rem; /* justeret margin så det passer med resten */
             height: 2.5rem;
             width: auto;
-            top: 0;
-            right: 0;
             opacity: 0.5;
             cursor: pointer;
           }
-        .formular {
-          display: grid;
-          grid-template: "column1 column2";
-          grid-gap: 1rem;
+          .logIn {
+            color: var(--main-orange-color)
+          }
+          .signUp {
+            margin-left: -13.5rem;
+            opacity: 0.5;
+            color: var(--h2-color);
+          }
+          .signUp:hover {
+            opacity: 1;
+            color: var(--main-orange-color)
+          }
+        /* input formular content */
+        .signUp-formular {
+          display: none;
+          width: 100%;
         }
+        td:nth-child(even) {
+          padding-left: 1rem;
+        }
+          /* navn/header på input felt */
           label {
             font-size: 1rem;
             color: var(--body-text-color);
             text-transform: capitalize; /* skriver første bogstav med stort */
             display: block;
-            
+            opacity: 0.8;
           }
           label:hover {
             color: var(--main-orange-color);
+            opacity: 1;
           }
-          input {
+          /* input felt */
+          input, .chosen {
             border: none; /* skygge udenom input felt */
             line-height: 3.1rem; /* højden på felt */
             background: var(--mainContainer-background-color);
@@ -108,13 +125,17 @@ main {
             font-size: 1rem;
             color: var(--body-text-color); /* input font farve */
           }
+          .chosen {
+            width: 90%;
+          }
+        /* klik videre når færdig */
         .formular-footer {
           display: flex;
           justify-content: center;
           align-items: center;
           height: 2.5rem;
-          margin-top: 1rem;
-          margin-bottom: 1rem;
+          margin-top: 2rem;
+          overflow-y: hidden;
           cursor: pointer;
         }
         .formular-footer img {
@@ -126,12 +147,9 @@ main {
         .formular-footer img:hover {
           opacity: 1;
         }
-    .signedUp {
-      
-    }
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 100px) {
   .picture-fitness {
     display: none;
   }
