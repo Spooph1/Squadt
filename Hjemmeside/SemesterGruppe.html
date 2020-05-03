@@ -5,8 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Semesterprojekt template</title>
 	<link rel="stylesheet" href="css/index.css">
+
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 </head>
-<!-- font weight, ens ICONS! -->
+
 <body>
 	<header> <!-- Side bar -->
 		<div class="sidebar-wrapper"> <!-- Full side bar container -->
@@ -117,20 +120,43 @@
 					<div class="modal-wrapper">
 						<!-- Modal content -->
 						<div class="modal-content-wrapper">
-					    <div class="modal-header">
-					      <div class="close-modal"></div>
-					      <h2>Modal Header</h2>
-					    </div>
-					    <div class="modal-body">
-							<div class="time">
-								<label>When do you want to train?</label>
-								<input class="text-input" type="text" name="time">
+							<div class="modal-header">
+								<h2>Planlæg ny træning</h2>
+								<a href="SemesterGruppe.html"><img src="img/close.png" alt="" class="close-modal"></a>
 							</div>
-							<div class="location">
-								<label>Where is the location?</label>
-								<input class="text-input" type="text" name="location">
+							<div class="modal-body">
+								<div id="day">
+									<label>Hvornår vil du træne?</label>
+									<select>
+										<option>I dag</option>
+										<option>I morgen</option>
+										<option>I overmorgen</option>
+									</select>
+								</div>
+								<div id="time">
+									<label>Hvad tid?</label>
+									<select>
+										<option>kl. 6:00</option>
+										<option>kl. 7:00</option>
+										<option>kl. 8:00</option>
+										<option>kl. 9:00</option>
+										<option>kl. 10:00</option>
+										<option>kl. 11:00</option>
+										<option>kl. 12:00</option>
+										<option>kl. 13:00</option>
+										<option>kl. 14:00</option>
+										<option>kl. 15:00</option>
+										<option>kl. 16:00</option>
+										<option>kl. 17:00</option>
+										<option>kl. 18:00</option>
+										<option>kl. 19:00</option>
+										<option>kl. 20:00</option>
+									</select>
+								</div>
+								<div class="planned-training">
+									<h3></h3>
+								</div>
 							</div>
-					    </div>
 					  </div>
 					</div>
 
@@ -148,25 +174,7 @@
 			</div>
 
 			<h2>Træningsmål</h2>
-			<!--
-				<div class="add-session" id="add-session-popup">
-					<p>Add Group-goal</p>
-					
-					<div class="modal-wrapper">
-						
-						<div class="modal-content-wrapper">
-						<div class="modal-header">
-						<span class="close">&times;</span>
-						<h2>Modal Header</h2>
-						</div>
-						<div class="modal-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						</div>
-					</div>
-					</div>
 
-				</div>
-			-->
 			<div class="traingingGoal-wrapper">
 				<div class="progression-container">
 					<div class="progression-bar">50%</div>
@@ -209,17 +217,12 @@
 		var modal = $(".modal-wrapper");
 		// Get the button that opens the modal
 		$("#add-session-popup").click(()=>{
-			$(modal).css("display","block");
+			$(modal).css("display","flex");
 		})
 		$(".close-modal").click(()=>{
 			$(modal).css("display","none");
 		})
-		/*
-		$(window).click(()=>{
-			if (event.target == modal || event.target == close) {
-				$(modal).css("display","none");
-			}
-		}) */
+
 	});
 	</script>
 </body>

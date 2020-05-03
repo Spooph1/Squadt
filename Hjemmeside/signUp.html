@@ -6,7 +6,6 @@
 	<title>Sign Up</title>
 	<link rel="stylesheet" href="css/signup.css">
 
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -25,8 +24,8 @@
 			</div>
 			<div class="formular-wrapper">
 				<div class="formular-header">
-					<h1 class="logIn">Log In</h1>
-					<h1 class="signUp h1-hover">Sign up</h1>
+					<h1 class="logIn h1-active">Log In</h1>
+					<h1 class="signUp h1-notActive">Sign up</h1>
 					<a href="SemesterGruppe.html"><img src="img/close.png" alt=""></a>
 				</div>
 				<div class="formular">
@@ -71,7 +70,7 @@
 							</td>
 							<td>
 								<label>gender</label>
-								<select name="gender" class="chosen">
+								<select name="gender" class="chosen" style="width: 90%;">
 									<option>Female</option>
 									<option>Male</option>
 								</select>
@@ -90,7 +89,7 @@
 						<tr>
 							<td>
 								<label>primary gym</label>
-								<select name="gym" class="chosen">
+								<select name="gym" class="chosen" style="width: 90%;">
 									<option>Sats Nyborgvej</option>
 									<option>Go2Fitness</option>
 									<option>Fitness World</option>
@@ -98,7 +97,7 @@
 							</td>
 							<td>
 								<label>current primary goal</label>
-								<select name="goal" class="chosen">
+								<select name="goal" class="chosen" style="width: 90%;">
 									<option>Loose weight</option>
 									<option>Build muscle</option>
 									<option>Better condition</option>
@@ -117,7 +116,7 @@
 	
 	<script>
 		$(()=> {
-			$(".chosen").chosen();
+			$(".chosen").chosen({ width: '100%' });
 			var chosenValue = $(".chosen").val();
 			console.log(chosenValue);
 			$( 'select.chosen' ).on( 'change', function() {
@@ -125,13 +124,17 @@
 			} );
 
 			$(".signUp").click(()=>{
-				$('select').chosen( { width: '100%' } );
 				$(".logIn-formular").css("display", "none");
 				$(".signUp-formular").css("display", "inline-block");
+				$(".logIn").removeClass("h1-active").addClass("h1-notActive");
+				$(".signUp").removeClass("h1-notActive").addClass("h1-active");
 			})
+
 			$(".logIn").click(()=>{
 				$(".signUp-formular").css("display", "none");
 				$(".logIn-formular").css("display", "inline-block");
+				$(".signUp").removeClass("h1-active").addClass("h1-notActive");
+				$(".logIn").removeClass("h1-notActive").addClass("h1-active");
 			})
 			
 			$(".formular-footer").click(()=>{

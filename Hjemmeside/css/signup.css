@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 :root {
-    --fonts: 'Open Sans', sans-serif;
+    --fonts: "Poppins", "Arial", "Helvetica Neue", sans-serif;
     --main-background-color: #DBDDE0; /* light grey */
 	  --main-navbar-color: #122133; /* dark grey blueish */
 	  --side-navbar-color: #45505f;
@@ -17,7 +17,7 @@
 /* ////////// default ///////// */
 body{
 	background-color: var(--main-background-color);
-  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif; /* OBS DENNE FONT? */
+  font-family: var(--fonts);
   color: #666; /* font farve */
   margin: 0;
   padding: 0;
@@ -32,7 +32,7 @@ main {
 }
   .container-wrapper {
     margin-top: 2rem;
-    height: 580px;
+    height: 650px;
     width: 900px;
     background-color: var(--main-orange-color);
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
@@ -64,7 +64,7 @@ main {
     }
       .formular-wrapper > div {
         margin-left: 2rem;
-        margin-right: 1rem;
+        
       }
         /* header - sign up / log in / gå ud */
         .formular-header {
@@ -82,25 +82,30 @@ main {
             opacity: 0.5;
             cursor: pointer;
           }
-          .logIn {
-            color: var(--main-orange-color)
-          }
           .signUp {
             margin-left: -13.5rem;
+          }
+          .h1-active {
+            opacity: 1;
+            color: var(--main-orange-color)
+          }
+          .h1-notActive {
             opacity: 0.5;
             color: var(--h2-color);
           }
-          .signUp:hover {
+          .h1-notActive:hover {
             opacity: 1;
-            color: var(--main-orange-color)
           }
         /* input formular content */
         .signUp-formular {
           display: none;
           width: 100%;
         }
+        td {
+          padding-bottom: 1rem;
+        }
         td:nth-child(even) {
-          padding-left: 1rem;
+          padding-left: 2rem;
         }
           /* navn/header på input felt */
           label {
@@ -116,7 +121,7 @@ main {
           }
           /* input felt */
           input, .chosen {
-            border: none; /* skygge udenom input felt */
+            border: none;
             line-height: 3.1rem; /* højden på felt */
             background: var(--mainContainer-background-color);
   /* inset dæmpet invendig skygge */
@@ -125,8 +130,9 @@ main {
             font-size: 1rem;
             color: var(--body-text-color); /* input font farve */
           }
-          .chosen {
-            width: 90%;
+          input:focus {
+            border-left: 5px solid var(--content-span-color);
+            outline: none;
           }
         /* klik videre når færdig */
         .formular-footer {
