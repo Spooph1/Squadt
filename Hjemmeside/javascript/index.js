@@ -53,6 +53,7 @@
 
 	FindTag("Sats Fitnessgruppe","Sats Nyborgvej");
 	FindTag("SDU fitten", "SDU Fitness");
+	new Group("Anders", users);
 	var JSONUsers = JSON.stringify(users);
 	var JSONGroups = JSON.stringify(groups);
 	
