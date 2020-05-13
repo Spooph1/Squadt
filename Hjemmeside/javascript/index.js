@@ -1,8 +1,4 @@
 // JavaScript Document
-    var fs = require('fs');
-    var usersData = fs.readFileSync('userData.json');
-    var userData = JSON.parse(usersData);
-
 	var users = [];
 	class User{
 		constructor(name, username, birthday, fitnesscenter, usernumber){
@@ -61,3 +57,8 @@
 	console.log(groups);
 	console.log(JSONUsers);
 	console.log(JSONGroups);
+
+$(.profile-pic)function(){
+    var width = $(.profile-pic).css("width");
+    $(this).css("height":width);
+}
