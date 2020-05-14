@@ -47,6 +47,7 @@
             <div class="profile-description">
 				<div class="content">
                     <h2>Beskrivelse</h2>
+                    
 				</div>
 			</div>
             <div class="profile-records">
@@ -56,17 +57,184 @@
 			</div>
             </div>
 		</div>
-		 <!-- ////////// kolonne 2 ///////// -->
+		  <!-- ////////// kolonne 2 ///////// -->
 		<div class="column-2">
-            <h2>Chat</h2>
-			<div class = "chat-window">
-            </div>
+			<div class="session-wrapper">
+				<h2>Kommende træninger</h2>
+				<div class="add-session" id="add-session-popup">
+					<p>Add training</p>
+					<!-- The Modal -->
+					<div class="modal-wrapper">
+						<!-- Modal content -->
+						<div class="modal-content-wrapper">
+							<div class="modal-header">
+								<h2>Planlæg ny træning</h2>
+								<a href="SemesterProfil.html"><img src="img/close.png" alt="" class="close-modal"></a>
+							</div>
+							<div class="modal-body">
+								<div id="day">
+									<label>Hvornår vil du træne?</label>
+									<select>
+										<option>I dag</option>
+										<option>I morgen</option>
+										<option>I overmorgen</option>
+									</select>
+								</div>
+								<div id="time">
+									<label>Hvad tid?</label>
+									<select>
+										<option>kl. 6:00</option>
+										<option>kl. 7:00</option>
+										<option>kl. 8:00</option>
+										<option>kl. 9:00</option>
+										<option>kl. 10:00</option>
+										<option>kl. 11:00</option>
+										<option>kl. 12:00</option>
+										<option>kl. 13:00</option>
+										<option>kl. 14:00</option>
+										<option>kl. 15:00</option>
+										<option>kl. 16:00</option>
+										<option>kl. 17:00</option>
+										<option>kl. 18:00</option>
+										<option>kl. 19:00</option>
+										<option>kl. 20:00</option>
+									</select>
+								</div>
+								<div class="planned-training">
+									<h3></h3>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<a href="SemesterProfil.html"><h3>Click here when you are done</h3></a>
+								<img src="img/forward.svg" alt="no image">
+							</div>
+					  </div>
+					</div>
+
+				</div>
+			</div>
+			<div class="traingingSessions-wrapper">
+				<div class="training">
+					<ul>
+						<li><h3>Today</h3></li>
+						<li><span>Time: 13:30</span> </li>
+						<li>5 deltager</li>
+						<li>Tryk for at deltage</li>
+					</ul>
+				</div>
+			</div>
+
+			
+            <div class="goal-wrapper">
+                <h2>Træningsmål</h2>
+                <div class="add-goal" id="add-goal-popup">
+					<p>Add goal</p>
+					<!-- The Modal -->
+					<div class="goal-modal-wrapper">
+						<!-- Modal content -->
+						<div class="goal-modal-content-wrapper">
+							<div class="goal-modal-header">
+								<h2>Tilføj nyt mål</h2>
+								<a href="SemesterProfil.html"><img src="img/close.png" alt="" class="close-modal"></a>
+							</div>
+							<div class="goal-modal-body">
+								<div id="category">
+									<label>I hvilken kategori er dit mål</label>
+									<select>
+										<option>Bænkpres</option>
+										<option>Pull ups</option>
+										<option>Cardio / Løbebånd</option>
+									</select>
+								</div>
+								<div id="type">
+									<label>Hvad er målet?</label>
+									<select>
+										<option>kl. 6:00</option>
+										<option>kl. 7:00</option>
+										<option>kl. 8:00</option>
+										<option>kl. 9:00</option>
+										<option>kl. 10:00</option>
+										<option>kl. 11:00</option>
+										<option>kl. 12:00</option>
+										<option>kl. 13:00</option>
+										<option>kl. 14:00</option>
+										<option>kl. 15:00</option>
+										<option>kl. 16:00</option>
+										<option>kl. 17:00</option>
+										<option>kl. 18:00</option>
+										<option>kl. 19:00</option>
+										<option>kl. 20:00</option>
+									</select>
+								</div>
+								<div class="planned-goal">
+									<h3></h3>
+								</div>
+							</div>
+							<div class="goal-modal-footer">
+								<a href="SemesterProfil.html"><h3>Click here when you are done</h3></a>
+								<img src="img/forward.svg" alt="no image">
+							</div>
+					  </div>
+					</div>
+				</div>
+                </div>
+			<div class="traingingGoal-wrapper">
+                    <div class="progression-container">
+					<div class="progression-bar">50%</div>
+				    </div>
+				    <br>
+                <button id="progressbar-click">Update your goal</button>
+			</div>
 		</div>
 
 	</main>
     
     <script src="jquery/jquery.js" ></script>
 	<script src="javascript/index.js" charset="utf-8" defer></script>
-	<script type="text/javascript"></script>
+	<script type="text/javascript">
+    $(()=> {
+        $("#groups").click(function(){
+           $("#pageBasedContent").load("groups.html"); 
+        });
+        
+		var value = 70; // et tal i procent
+		$("#progressbar-click").click(()=>{
+			var i = 0;
+			if (i == 0) {
+				i = 1;
+				var elem = $(".progression-bar");
+				var maxWidth = parseInt($(".progression-container").css("width"));
+				var valuePixels = (maxWidth/100)*value;
+				var currentWidth = parseInt($(".progression-bar").css("width"));
+				var id = setInterval(frame, 10);
+				function frame() {
+					if ( currentWidth >= valuePixels) {
+						clearInterval(id);
+						i = 0;
+					} else {
+						currentWidth++;
+						var currentWidthPercent = Math.ceil(currentWidth/maxWidth * 100);
+						$(".progression-bar").css("width",currentWidth);
+						// beregn procent fra 100 -> width
+						$(".progression-bar").html(currentWidthPercent+"%");
+					}
+				}}})
+		// Get the add session modal
+		var modal = $(".modal-wrapper");
+		// Get the button that opens the modal
+		$("#add-session-popup").click(()=>{
+			$(modal).css("display","flex");
+		})
+		$(".close-modal").click(()=>{
+			$(modal).css("display","none");
+		})
+    
+        // Get the add goal modal
+        var goalModal = $(".goal-modal-wrapper");
+        $("#add-goal-popup").click(()=>{
+            $(goalModal).css("display", "flex");
+        })
+	});
+    </script>
 </body>
 </html>

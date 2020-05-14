@@ -71,7 +71,7 @@ h1, h2, h3, h4 {
 main {
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: [col-1] 1fr [col-2] minmax(300px, 1fr);
+  grid-template-columns: [col-1] 2fr [col-2] minmax(300px, 1fr);
   height: 100vh;
   grid-template-areas:
       "header header"
@@ -150,7 +150,9 @@ main {
   }
   .posts-wrapper {
     overflow-y: scroll;
-    height: 100vh;
+    height: 60vh;
+      background-color: var(--container-background-color);
+      border-radius: 20px;
   }
   .posts-wrapper::-webkit-scrollbar {
     display: none;
@@ -158,52 +160,92 @@ main {
   .posts-wrapper {
     -ms-overflow-style: none;
   }
-  .profile-overview {
+  .chat-overview {
     overflow-y: scroll;
-    height: 100vh;
+    height: 30  vh;
+      background-color: var(--container-background-color);
+    border-radius: 20px;
 }
-.profile-overview::-webkit-scrollbar{
+.chat-overview::-webkit-scrollbar{
     display: none;
-}
-.profile-description{
-    height: 30vh;
-}
-.profile-records {
-    height: 30vh;
-}
-.profile-info {
-    height: 30vh;
-    display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: [col-1] 1fr [col-2] minmax(150px, 2fr);
-  grid-template-areas:
-      "pic text";
-}
-.profile-pic {
-    grid-area: pic;
-    background-color: var(--main-navbar-color);
-    border-radius: 50%;
-    width: 100%;
-}
-.profile-text {
-    grid-area: text;
-    margin-top: auto;
-    margin-bottom: auto; 
-}
-.profile-text p{
-    font-size: 2rem;
+    
 }
     .content {
-      background-color: var(--container-background-color);
+      background-color: var(--mainContainer-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      width: 97%;
-      height: 75%;
+      width: 100%;
       border-radius: 20px;
       position: relative;
       margin-top: 1.5rem;
-      padding-left: 3%;
-      padding-top: 0.1rem;
     }
+    .content:first-child {
+      margin-top: 0rem;
+    }
+      /*  rød tag */
+      .content::after {
+        content: "";
+        position: absolute;
+        background: var(--main-orange-color);
+        width: 0.25rem;
+        height: 5rem;
+        border-radius: 2px;
+        left: 0px;
+        top: 1rem;
+      }
+      .content-top {
+        display: flex;
+        flex-direction: row;
+      }
+        .content-top ul {
+          list-style: none;
+          padding: 0;
+          margin-left: 6rem;
+          margin-top: 0rem;
+          margin-right: 1rem;
+          justify-content: center;
+        }
+        .top-billede {
+          position: absolute;
+          background-color: var(--main-navbar-color);
+          border-radius: 50%;
+          width: 4rem;
+          height: 4rem;
+          margin-left: 1.5rem;
+          margin-top: 1rem;
+        }
+        .content-top h3 {
+          margin-bottom: 0.2rem;
+        }
+        .content-top span {
+          color: var(--content-span-color);
+        }
+      .content hr {
+        margin-top: -1rem;
+      }
+      .content-comment {
+        display: flex;
+        flex-direction: row;
+      }
+        .comment-billede {
+          position: absolute;
+          background-color: var(--main-navbar-color);
+          border-radius: 50%;
+          width: 3rem;
+          height: 3rem;
+          margin-left: 2.5rem;
+          margin-top: 1rem;
+        }
+        .content-comment ul {
+          list-style: none;
+          padding: 0;
+          margin-left: 6rem;
+          margin-top: -0.5rem;
+          margin-right: 1rem;
+          justify-content: center;
+        }
+        .content-comment h5 {
+          margin-bottom: 0rem;
+        }
 
   /* ////////// kolonne 2 ///////// */
 
@@ -211,7 +253,7 @@ main {
     grid-area: sidebar;
     margin-right: 1.5rem;
   }
-    .session-wrapper, .goal-wrapper {
+    .session-wrapper {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -245,32 +287,8 @@ main {
         bottom: -0.3rem;
         margin-left: 0.7rem;
       }
-.add-goal {
-        background-color: var(--container-background-color);
-        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-        min-width: 8rem;
-        border-radius: 20px;
-        height: 2rem;
-        position: relative;
-        cursor: pointer;
-      }
-      .add-goal::after {
-        content: '\002B'; /* css entities : svarer til ' + ' */
-        color: var(--h2-color);
-        font-size: 2rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0rem;
-      }
-      .add-goal p {
-        color: var(--h2-color);
-        position: absolute;
-        font-size: 0.8rem;
-        bottom: -0.3rem;
-        margin-left: 0.7rem;
-      }
         /* popup modal (background) */
-        .modal-wrapper, .goal-modal-wrapper {
+        .modal-wrapper {
           display: none; /* Hidden by default */
           position: fixed; /* Stay in place */
           justify-content: center;
@@ -283,7 +301,7 @@ main {
           background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
         }
         /* Modal Content */
-        .modal-content-wrapper, .goal-modal-content-wrapper { 
+        .modal-content-wrapper { 
           width: 400px;
           height: 400px;
           padding: 2rem;
@@ -291,7 +309,7 @@ main {
           border-radius: 20px;
           position: relative;
         }
-          .modal-content-wrapper::after, .goal-modal-content-wrapper::after {
+          .modal-content-wrapper::after {
             content: "";
             position: absolute;
             background: var(--main-orange-color);
@@ -301,7 +319,7 @@ main {
             left: 0px;
             top: 1rem;
           }
-          .modal-header, .goal-modal-header {
+          .modal-header {
             width: 100%;
             height: 3rem;
             padding-bottom: 2rem;
@@ -310,33 +328,33 @@ main {
             justify-content: space-between; 
             align-items: center;
           } 
-            .modal-header img, .goal-modal-header img {
+            .modal-header img {
               margin-right: 1.3rem; /* justeret margin så det passer med resten */
               height: 2.5rem;
               width: auto;
               opacity: 0.5;
               cursor: pointer;
             }
-          .modal-body, .goal-modal-body {
+          .modal-body {
             width: 100%;
           }
-            .modal-body, .goal-modal-body {
+            .modal-body {
               padding: 0.5rem;
               font-size: 1.1rem;
               color: var(--body-text-color);
               letter-spacing: 0.5px;
               display: block
             }
-            .modal-body > div, .goal-modal-body > div {
+            .modal-body > div {
               margin-bottom: 1.5rem;
             }
-            .modal-body label, .goal-modal-body label {
+            .modal-body label {
               display: block;
             }
             label:hover {
               color: var(--main-orange-color);
             }
-          .modal-footer, .goal-modal-footer {
+          .modal-footer {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -345,13 +363,13 @@ main {
             overflow-y: hidden;
             cursor: pointer;
           }
-          .modal-footer img, .goal-modal-fotter img {
+          .modal-footer img {
             margin-left: 1rem;
             height: 2.5rem;
             width: auto;
             opacity: 0.5;
           }
-          .modal-footer img:hover, .goal-modal-footer img:hover {
+          .modal-footer img:hover {
             opacity: 1;
           }
 
@@ -379,12 +397,12 @@ main {
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
       width: 100%;
-      height: 35vh;
       border-radius: 20px;
       position: relative;
       min-height: 80px;
       display: flex;
       justify-content: center;
+        height: 35vh;
     }
     /* progression */
     .progression-container {
@@ -405,6 +423,7 @@ main {
     }
     .traingingGoal-wrapper button {
       margin-top: 3rem;
+      height: 2rem;
       background-color: var(--main-orange-color);
       /* copieret fra w3s - midlertidig knap*/
       border: none;
@@ -415,7 +434,6 @@ main {
       display: inline-block;
       font-size: 16px;
       cursor: pointer;
-      height: 2rem;
     }
 @media only screen and (max-width: 800px) {
   body{

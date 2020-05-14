@@ -17,7 +17,7 @@
 	
 	new User("Anders Bjørn Øbro", "AndersMorgenhård", 210403, "Sats Nyborgvej", users.length + 1);
 	new User("Magnus Lindberg Christensen", "MacMiller", 120808, "SDU Fitness", users.length + 1);
-	new User("Rasmus Bundsgaard", "Bundemand", 091296, "Sats Nyborgvej", users.length + 1);
+	new User("Rasmus Bundsgaard", "Bundemand", 091296, "Sats Nybo rgvej", users.length + 1);
 	new User("Simon Helsted Juul", "Juulemand", 090897, "Sats Nyborgvej", users.length + 1);
 	new User("Cecilie Nedergaard-Rasmussen", "Den smukkeste af dem alle", 120699, "SDU Fitness", users.length + 1);
 	new User("Idefix", "Id", 161007, "Baghaven", users.length + 1);
