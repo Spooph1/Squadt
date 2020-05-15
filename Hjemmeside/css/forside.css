@@ -157,7 +157,7 @@ main {
   }
   .posts-wrapper {
     overflow-y: scroll;
-    height: 60vh;
+    height: 50vh;
       background-color: var(--container-background-color);
       border-radius: 20px;
   }
@@ -166,12 +166,14 @@ main {
   }
   .posts-wrapper {
     -ms-overflow-style: none;
+    padding-top: 1.5rem;
   }
   .chat-overview {
     overflow-y: scroll;
-    height: 30  vh;
+    height: 30vh;
       background-color: var(--container-background-color);
     border-radius: 20px;
+    padding-top: 1.5rem;
 }
 .chat-overview::-webkit-scrollbar{
     display: none;
@@ -180,10 +182,12 @@ main {
     .content {
       background-color: var(--mainContainer-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      width: 100%;
+      width: 95%;
       border-radius: 20px;
       position: relative;
       margin-top: 1.5rem;
+      margin-right: auto;
+      margin-left: auto;
     }
     .content:first-child {
       margin-top: 0rem;
