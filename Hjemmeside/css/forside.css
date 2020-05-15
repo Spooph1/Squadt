@@ -354,7 +354,8 @@ main {
               font-size: 1.1rem;
               color: var(--body-text-color);
               letter-spacing: 0.5px;
-              display: block
+              display: block;
+              text-align: center;
             }
             .modal-body > div {
               margin-bottom: 1.5rem;
@@ -400,7 +401,8 @@ main {
         width: 90%;
         height: auto;
         border-radius: 15px;
-        margin-left: 1rem;
+        margin-left: auto;
+        margin-right: auto;
         position: relative;
       }
 

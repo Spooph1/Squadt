@@ -227,6 +227,8 @@ main {
       .content-comment {
         display: flex;
         flex-direction: row;
+        margin-right: 0;
+        margin-left: 3.5rem;
       }
         .comment-billede {
           position: absolute;
@@ -265,6 +267,7 @@ main {
       margin: 0.6rem 1rem 1rem 0.5rem;
       color: var(--h2-color);
     }
+
       .add-session {
         background-color: var(--container-background-color);
         box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
@@ -345,7 +348,8 @@ main {
               font-size: 1.1rem;
               color: var(--body-text-color);
               letter-spacing: 0.5px;
-              display: block
+              display: block;
+                text-align: center;
             }
             .modal-body > div {
               margin-bottom: 1.5rem;
@@ -391,9 +395,19 @@ main {
         width: 90%;
         height: auto;
         border-radius: 15px;
-        margin-left: 1rem;
-        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative; 
       }
+.training h3 {
+    margin: 0;
+}
+.training ul {
+    list-style: none;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 
     .traingingGoal-wrapper {
       background-color: var(--container-background-color);
