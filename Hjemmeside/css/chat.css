@@ -250,7 +250,68 @@ main {
       position: relative;
       margin-top: 1.5rem;
       overflow: hidden; /* eventuelt med javascript og begrænset antal tegn */
-    }  
+    }
+.messages-container{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+		"recived user";
+}
+.recived-chat{
+	grid-area: recived;
+	display: flex;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+.user-chat{
+	grid-area: user;
+	display: flex;
+	margin-left: auto;
+	
+	margin-right: 1rem;
+}
+.message-input{
+	position: absolute;
+	bottom: 0;
+	background-color: var(--main-background-color);
+	height: auto;
+	min-height: 4rem;
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+}
+#messageInput{
+	margin-top: 1rem;
+	width: 90%;
+	height: auto;
+	min-height: 2rem;
+	border-radius: 10px;
+}
+.sendButton{
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	position: absolute;
+  	right: 5%;
+  	top: 4px;
+  	text-align:center;
+	background-color: var(--main-orange-color);
+}
+#sendButton{
+  	border:none;
+  	outline:none;
+	background-color: transparent;
+}
+#arrowImg{
+	height: 1.5rem;
+	width: 1.5rem;
+	transform: rotate(180deg);
+	position: absolute;
+	top: 2px;	
+	right: 10%;
+}
 
 /* ////////// what? ///////// */
 @media only screen and (max-width: 800px) {
