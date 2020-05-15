@@ -63,43 +63,59 @@ main {
       border-bottom-right-radius: 20px;
     }
       .formular-wrapper > div {
-        margin-left: 2rem;
-        
+        margin-left: 2rem; 
       }
-        /* header - sign up / log in / gå ud */
-        .formular-header {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          cursor: default;
-          margin-bottom: 0rem;
+      /* header - sign up / log in / gå ud */
+      .formular-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        cursor: default;
+        margin-bottom: 0rem;
+      }
+        .formular-header img { 
+          margin-right: 1.3rem; /* justeret margin så det passer med resten */
+          height: 2.5rem;
+          width: auto;
+          opacity: 0.5;
+          cursor: pointer;
         }
-          .formular-header img { 
-            margin-right: 1.3rem; /* justeret margin så det passer med resten */
+        .signUp {
+          margin-left: -10rem;
+        }
+        .h1-active {
+          opacity: 1;
+          color: var(--main-orange-color);
+          text-decoration: underline;
+        }
+        .h1-notActive {
+          opacity: 0.5;
+          color: var(--h2-color);
+          text-decoration: none;
+        }
+        .h1-notActive:hover {
+          opacity: 1;
+        }
+        /*
+        .formular-header {
+          position: relative;
+          cursor: default;
+        }
+          .formular-header img {
+            position: absolute;
             height: 2.5rem;
             width: auto;
+            top: 0;
+            right: 0;
             opacity: 0.5;
             cursor: pointer;
           }
-          .signUp {
-            margin-left: -13.5rem;
-          }
-          .h1-active {
-            opacity: 1;
-            color: var(--main-orange-color)
-          }
-          .h1-notActive {
-            opacity: 0.5;
-            color: var(--h2-color);
-          }
-          .h1-notActive:hover {
-            opacity: 1;
-          }
+          */
+
         /* input formular content */
-        .signUp-formular {
+        .logIn-container {
           display: none;
-          width: 100%;
         }
         td {
           padding-bottom: 1rem;
@@ -135,7 +151,7 @@ main {
             outline: none;
           }
         /* klik videre når færdig */
-        .formular-footer {
+        .logIn-footer, .signUp-footer {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -144,18 +160,22 @@ main {
           overflow-y: hidden;
           cursor: pointer;
         }
-        .formular-footer img {
+        .logIn-footer, .signUp-footer img {
           margin-left: 1rem;
           height: 2.5rem;
           width: auto;
           opacity: 0.5;
         }
-        .formular-footer img:hover {
+        .logIn-footer, .signUp-footer img:hover {
           opacity: 1;
         }
 
 
-@media only screen and (max-width: 100px) {
+
+
+
+
+@media only screen and (max-width: 1000px) {
   .picture-fitness {
     display: none;
   }

@@ -3,7 +3,7 @@
 $servername = "localhost"; //evt online server navn her
 $dbUsername = "root";
 $dbPassword = "";
-$dbName = "LoginSystem";
+$dbName = "squadtsamlet";
 
 $conn = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 
