@@ -29,6 +29,9 @@ h1, h2, h3, h4 {
   letter-spacing: 0.2px;
 }
 /* ////////// side menu ///////// */
+#home {
+    background-color: var(--main-orange-color);
+}
 .sidebar-wrapper {
   display: flex;
   background-color: var(--side-navbar-color); /* Setting side navbar background color */
@@ -55,6 +58,10 @@ h1, h2, h3, h4 {
   line-height: 1rem;
   align-items: center; /* The icons text are now centered */
   text-align: center;
+}
+.sidebar-wrapper ul li a {
+    text-decoration: none;
+    color: white;
 }
 .sidebar-wrapper ul li img {
   padding: 15% 0; /* Setting icon image padding */

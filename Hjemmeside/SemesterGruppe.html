@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Semesterprojekt template</title>
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/gruppe.css">
 
 	<!-- font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -14,10 +14,10 @@
 	<header> <!-- Side bar -->
 		<div class="sidebar-wrapper"> <!-- Full side bar container -->
 			<ul> <!-- Unordered list to keep navigational elements -->
-				<li id="home"><img src="img/Homeicon.png"><p>Home</p> </li> <!-- Home icon container -->
-				<li id="groups"><img src="img/Groupsicon.png"><p>Groups</p></li> <!-- Group icon container -->
-				<li id="chat"><img src="img/Chaticon.png"><p>Chat</p></li> <!-- Chat icon container -->
-				<li id="profile"><img src="img/Profileicon.png"><p>Profile</p></li> <!-- profile icon container -->
+				<li id="home"><a href="SemesterForside.html"><img src="img/Homeicon.png"><p>Home</p></a></li> <!-- Home icon container -->
+				<li id="groups"><a href="SemesterGruppe.html"><img src="img/Groupsicon.png"><p>Groups</p></a></li> <!-- Group icon container -->
+				<li id="chat"><a href="SemesterChat.html"><img src="img/Chaticon.png"><p>Chat</p></a></li> <!-- Chat icon container -->
+				<li id="profile"><a href="SemesterProfil.html"><img src="img/Profileicon.png"><p>Profile</p></a></li> <!-- profile icon container -->
 			</ul>
 		</div>
 	</header>
@@ -196,6 +196,11 @@
 	</main>
     <script src="javascript/index.js" charset="utf-8" defer></script>
     <script src="jquery/jquery.js" ></script>
+    <script>
+    $("body").css ({
+    'padding-top': $(".top-bar").outerHeight() + '800px';
+    })
+    </script>
 	<script type="text/javascript">
 	$(()=> {
         $("#groups").click(function(){
@@ -224,6 +229,7 @@
 						$(".progression-bar").html(currentWidthPercent+"%");
 					}
 				}}})
+        
 		// Get the modal
 		var modal = $(".modal-wrapper");
 		// Get the button that opens the modal
