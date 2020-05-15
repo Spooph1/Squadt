@@ -58,9 +58,4 @@
 	console.log(JSONUsers);
 	console.log(JSONGroups);
 
-$(.profile-pic)function(){
-    var width = $(.profile-pic).css("width");
-    $(this).css("height":width);
-    
-    
-}
+ 
