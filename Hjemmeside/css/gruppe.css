@@ -157,7 +157,10 @@ main {
   }
   .posts-wrapper {
     overflow-y: scroll;
-    height: 100vh;
+    height: 72.5vh;
+	border-radius: 20px;
+	background-color: var(--container-background-color);
+	padding-top: 1.5rem;
   }
   .posts-wrapper::-webkit-scrollbar {
     display: none;
@@ -165,20 +168,15 @@ main {
   .posts-wrapper {
     -ms-overflow-style: none;
   }
-  .chat-overview {
-    overflow-y: scroll;
-    height: 100vh;
-}
-.chat-overview::-webkit-scrollbar{
-    display: none;
-}
     .content {
-      background-color: var(--container-background-color);
+      background-color: var(--mainContainer-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      width: 100%;
+      width: 95%;
       border-radius: 20px;
       position: relative;
       margin-top: 1.5rem;
+	  margin-left: auto;
+	  margin-right: auto;
     }
     .content:first-child {
       margin-top: 0rem;

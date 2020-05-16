@@ -225,14 +225,11 @@ main {
     .session-wrapper, .goal-wrapper {
       display: flex;
       flex-direction: row;
-      /*align-items: center;*/
-      /*align-items: center;*/
       justify-content: space-between;
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
     }
     .column-2 h2 {
-      /*margin: 0.6rem 1rem 1rem 0.5rem;*/
       margin-top: auto;
       margin-bottom: auto;
       color: var(--h2-color);
