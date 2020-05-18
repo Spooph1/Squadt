@@ -24,7 +24,7 @@
 			$(".formular").fadeOut(2000);
 				$(".picture-fitness").animate({width: "100%"});
 				setTimeout(()=>{
-					window.location.href = "SemesterGruppe.html";
+					window.location.href = "SemesterForside.html";
 				}, 2000);
 		}
 	</script>
@@ -42,7 +42,7 @@
 				<!-- headeren (sign up, log in knap, '+' luk) -->
 				<div class="formular-header">
 					<h1 class="logIn h1-notActive">Log In</h1>
-					<a href="signup.php"><h1 class="signUp h1-active" style="text-decoration: none;">Sign up</h1></a>
+					<h1 class="signUp h1-active">Sign up</h1>
 					<a href="SemesterGruppe.html"><img src="img/close.png" alt=""></a>
 				</div>
 				<!-- log in / sign up formular -->

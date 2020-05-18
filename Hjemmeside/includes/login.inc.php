@@ -44,7 +44,7 @@ if(isset($_POST['login-submit'])) {
           $_SESSION["id"] = $row["id"];
           $_SESSION["uid"] = $row["username"];
           //hvis vi ønsker at gemme brugeren mail inde i hjemmesiden, er der HER den skal tilføjes
-          header("Location: ../home.php?login=succes");
+          header("Location: ../SemesterGruppe.php?login=succes");
           exit();
         }
         // selvom boolean er enten eller, checker vi for en sikkerheds skyld for om det er andet
