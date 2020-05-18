@@ -7,6 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Semesterprojekt template</title>
+	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/gruppe.css">
 	<!-- font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -59,8 +60,7 @@
 				<li id="profile"><a href="SemesterProfil.html"><img src="img/Profileicon.png"><p>Profile</p></a></li> <!-- profile icon container -->
 			</ul>
 		</div>
-	</header>
-	<main>
+
 		<div class="top-bar">
 			<ul>
 				<li class="logo">SQUADT</li>
@@ -69,6 +69,8 @@
 				<li><a href="signUp.html"><img src="img/LogOutIcon.png" class="menuicons"></a></li>
 			</ul>
 		</div>
+	</header>
+	<main>
 		
 		<div class="topbar-groups">
                     <?php
