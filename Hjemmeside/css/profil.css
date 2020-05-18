@@ -173,18 +173,19 @@ main {
 .profile-overview::-webkit-scrollbar{
     display: none;
 }
-.profile-description .content{
-    height: 26.5vh;
-    margin-top: 3rem;
+.profile-description{
+    height: 30%;
+    margin-top: 1.5rem;
 }
-.profile-records .content {
-    height: 26.5vh;
+.profile-records{
+    height: 30%;
 }
 .profile-info {
-    height: 30vh;
+    height: 26%;
     display: grid;
   grid-gap: 1rem;
-  grid-template-columns: [col-1] 1fr [col-2] minmax(150px, 1fr);
+  grid-template-columns: [col-1] 245px [col-2] minmax(400px, 1fr);
+  grid-template-rows: 100%;
   grid-template-areas:
       "pic text";
 }
@@ -192,23 +193,28 @@ main {
     grid-area: pic;
     background-color: var(--main-navbar-color);
     border-radius: 100%;
-    width: 85%;
-    height: 85%;
-    margin: auto;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin-bottom: 1.5rem;
 }
 .profile-text {
     grid-area: text;
     margin-top: auto;
-    margin-bottom: auto; 
+    margin-bottom: auto;
+    min-width: 0;
+    min-height: 0;
 }
+
 .profile-text p{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
     .content {
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
       width: 97%;
-      height: 75%;
+      height: 100%;
       border-radius: 20px;
       position: relative;
       margin-top: 1.5rem;
@@ -381,7 +387,7 @@ main {
       .training {
         background-color: var(--mainContainer-background-color);
         box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-        width: 90%;
+        width: 92.5%;
         height: auto;
         border-radius: 15px;
         margin-left: auto;
