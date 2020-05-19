@@ -9,49 +9,44 @@ main {
   grid-template-columns: [col-1] 2fr [col-2] minmax(300px, 1fr);
   height: 100vh;
   grid-template-areas:
-      "recommended recommended"
       "main sidebar";
 }
   /* ////////// kolonne 1 ///////// */
   .column-1 {
     grid-area: main;
     margin-left: 6.5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+  }
+  .column-1 h1:first-child {
+    margin: 0rem 1rem 1rem 0rem;
   }
   .column-1 h1 {
-    margin: 0rem 1rem 1rem 0.5rem;
+    margin: 1rem 1rem 1rem 0rem;
   }
   .posts-wrapper {
+    flex: 1;
     overflow-y: scroll;
-    height: 43vh;
-      background-color: var(--container-background-color);
-      border-radius: 20px;
+    background-color: var(--container-background-color);
+    border-radius: 10px;
+    -ms-overflow-style: none;
+    padding-top: 1rem;
   }
   .posts-wrapper::-webkit-scrollbar {
     display: none;
   }
-  .posts-wrapper {
-    -ms-overflow-style: none;
-    padding-top: 1.5rem;
-  }
-  .chat-overview {
-    overflow-y: scroll;
-    height: 26.5vh;
-    background-color: var(--container-background-color);
-    border-radius: 20px;
-    padding-top: 1.5rem;
-  }
-  .chat-overview::-webkit-scrollbar{
-    display: none;
-   }
     .content {
       background-color: var(--mainContainer-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      width: 95%;
-      border-radius: 20px;
+      width: calc(100%-1rem);
+      border-radius: 10px;
       position: relative;
       margin-top: 1.5rem;
-      margin-right: auto;
-      margin-left: auto;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      cursor: pointer;
     }
     .content:first-child {
       margin-top: 0rem;
@@ -94,83 +89,97 @@ main {
         .content-top span {
           color: var(--content-span-color);
         }
-      .content hr {
-        margin-top: -1rem;
-      }
-      .content-comment {
-        display: flex;
-        flex-direction: row;
-      }
-        .comment-billede {
-          position: absolute;
-          background-color: var(--main-navbar-color);
-          border-radius: 50%;
-          width: 3rem;
-          height: 3rem;
-          margin-left: 2.5rem;
-          margin-top: 1rem;
-        }
-        .content-comment ul {
-          list-style: none;
-          padding: 0;
-          margin-left: 6rem;
-          margin-top: -0.5rem;
-          margin-right: 1rem;
-          justify-content: center;
-        }
-        .content-comment h5 {
-          margin-bottom: 0rem;
-        }
+  .chat-overview {
+    flex: 1;
+    margin-bottom: 5rem;
+    overflow-y: scroll;
+    background-color: var(--container-background-color);
+    border-radius: 10px;
+    padding-top: 1rem;
+  }
+  .chat-overview::-webkit-scrollbar{
+    display: none;
+    }
 
   /* ////////// kolonne 2 ///////// */
 
   .column-2 {
     grid-area: sidebar;
     margin-right: 1.5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
   }
     .session-wrapper, .goal-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
       margin-bottom: 1.5rem;
     }
-.goal-wrapper{
-	margin-top: 1.5rem;
-}
+      .goal-wrapper{
+        margin-top: 1.5rem;
+      }
     .column-2 h2 {
-      /*margin: 0.6rem 1rem 1rem 0.5rem;*/
       color: var(--h2-color);
-	  margin-top: auto;
-	  margin-bottom: auto;
+	    margin: 0.5rem 1rem -0.5rem 0rem;
     }
 
-    .traingingSessions-wrapper {
+    .traingingSessions-wrapper, .traingingGoal-wrapper {
+      flex: 1;
+      overflow-y: scroll;
+      width: 100%;
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      width: 100%;
-      border-radius: 20px;
-      position: relative;
-      height: 37vh;
-      padding: 0.1rem;
+      border-radius: 10px;
+    }
+      .traingingSessions-wrapper h3 {
+        margin: 0.5rem 0rem 0rem 1rem;
+        opacity: 0.7;
+        font-size: 1rem;
+      }
+      .traingingGoal-wrapper {
+        margin-bottom: 5rem;
+      }
+    .traingingSessions-wrapper::-webkit-scrollbar, .traingingGoal-wrapper::-webkit-scrollbar {
+      display: none;
     }
       .training {
+        width: 90%;
+        margin-top: 1rem;
+        padding-top: 0.05rem;
+        padding-bottom: 0.05rem;
         background-color: var(--mainContainer-background-color);
         box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-        width: 92.5%;
-        height: auto;
-        border-radius: 15px;
+        border-radius: 10px;
         margin-left: auto;
         margin-right: auto;
         position: relative;
       }
+      .training::after {
+        content: "";
+        position: absolute;
+        background: var(--main-orange-color);
+        width: 0.25rem;
+        height: 2.5rem;
+        border-radius: 2px;
+        left: 0px;
+        top: 0.5rem;
+      }
+      .training ul {
+        list-style: none;
+      }
+        .add-training-button {
+          background-color: var(--main-orange-color);
+        border: none;
+        color: white;
+        padding: 0 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        }
 
     .traingingGoal-wrapper {
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
       width: 100%;
-	    height: 36.5vh;
-      border-radius: 20px;
+      border-radius: 10px;
       position: relative;
       min-height: 80px;
       display: flex;
@@ -198,7 +207,6 @@ main {
       margin-top: 3rem;
       height: 2rem;
       background-color: var(--main-orange-color);
-      /* copieret fra w3s - midlertidig knap*/
       border: none;
       color: white;
       padding: 0 1.5rem;
@@ -213,7 +221,6 @@ main {
   main {
     grid-template-columns: [col-1] minmax(300px, 1fr);
     grid-template-areas:
-        "recommended"
         "sidebar"
         "main";
   }

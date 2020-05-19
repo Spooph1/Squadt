@@ -201,10 +201,8 @@
 				<button id="progressbar-click">Update your goal</button>
 			</div>
 		</div>
-=======
         <div id="pageBasedContent">
         </div>
->>>>>>> Stashed changes:Hjemmeside/Semester template.html
 
 	</main>
     <script src="javascript/index.js" charset="utf-8" defer></script>

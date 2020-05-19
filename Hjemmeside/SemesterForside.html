@@ -35,7 +35,6 @@
 		<!-- ////////// kolonne 1 ///////// -->
 		<div class="column-1">
 			<h1>Seneste opslag</h1>
-
 			<div class="posts-wrapper">
 				<div class="content">
 						<div class="content-top">
@@ -75,7 +74,7 @@
 						</div>
 				</div>
 			</div>
-            <h2>Seneste beskeder</h2>
+            <h1>Seneste beskeder</h1>
             <div class="chat-overview">
                 
 				<div class="content">
@@ -122,15 +121,43 @@
 		 <!-- ////////// kolonne 2 ///////// -->
 		<div class="column-2">
 			<div class="session-wrapper">
-				<h2>Kommende træninger</h2>
+				<h2>Kommende Træninger</h2>
 			</div>
 				<div class="traingingSessions-wrapper">
+					<h3>Dine tilmeldte træninger:</h3>
 				<div class="training">
 					<ul>
-						<li><h3>I dag</h3></li>
+						<li>I dag</li>
 						<li><span>Kl: 13:30</span> </li>
 						<li>5 deltager</li>
-						<li>Tryk for at deltage</li>
+					</ul>
+				</div>
+
+				<div class="training">
+					<ul>
+						<li>I morgen</li>
+						<li><span>Kl: 13:30</span> </li>
+						<li>10 deltager</li>
+					</ul>
+				</div>
+
+				<hr>
+				<h3>Deltag i nye træninger:</h3>
+
+				<div class="training">
+					<ul>
+						<li>I dag</li>
+						<li><span>Kl: 17:30</span> </li>
+						<li>5 deltager</li>
+						<li><button class="add-training-button">Tryk for at deltage</button></li>
+					</ul>
+				</div>
+				<div class="training">
+					<ul>
+						<li>I morgen</li>
+						<li><span>Kl: 18:30</span> </li>
+						<li>5 deltager</li>
+						<li><button class="add-training-button">Tryk for at deltage</button></li>
 					</ul>
 				</div>
 			</div>
@@ -146,12 +173,10 @@
 					<button id="progressbar-click">Update your goal</button>
 				</div>
 		</div>
-
 	</main>
 
 	<script src="javascript/index.js" charset="utf-8" defer></script>
 	<script src="jquery/jquery.js" ></script>
-	<script src="Foundation/assets/js/app.js" defer></script>
 	<script type="text/javascript">
 	$(()=> {
 		var value = 70; // et tal i procent

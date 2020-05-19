@@ -23,6 +23,7 @@ body{
   margin: 0;
   padding: 0;
   overflow: hidden;
+  height: 100vh;
 }
 h1, h2, h3, h4 {
   color: var(--main-navbar-color);
@@ -105,20 +106,30 @@ h1, h2, h3, h4 {
     border-radius: 20px; /* Adding rounded corners to the search field */
     margin-right: 1rem;
   }
-  .searchbox-wrapper input {
+  .searchbox-wrapper input[type=search] {
     width: 95%;
     margin-left: 0.4rem;
+    -moz-appearance: none;/* older firefox */
+    -webkit-appearance: none; /* safari, chrome, edge and ie mobile */
+    appearance: none; /* rest */
+    outline: none;
+    border: none;
+    height: 80%;
+    border-radius: 1rem;
   }
   .menuicons{
     height: 24px; /* Setting height for top bar icons */
     margin-left: 0rem; /* Setting left margin for top bar icons */
     margin-right: 1.5rem; /* Setting right margin for top bar icons */
   }
+  .menuicons:hover {
+    background-color: var(--main-orange-color);
+    border-radius: 50%;
+  }
 /* /////////// content /////////// */
 main > div {
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
-
 
 @media only screen and (max-width: 800px) {
   body{
