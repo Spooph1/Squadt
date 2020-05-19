@@ -35,20 +35,21 @@
 		<!-- ////////// kolonne 1 ///////// -->
 		<div class="column-1">
             <div class ="profile-overview">
-                <div class="profile-info">
-                    <div class = "profile-pic">
-                    </div>
-                    <div class = "profile-text">
-                        <p>hej afgasfgsajhgf jsafjas</p>
-                        <p>hej gajhf jaaa sa sa</p>
-                        <p>hej asf s fs af sa fsa</p>
-                        <p>hejsf asdf sa f  as fdsa</p>
-                    </div>
-			     </div>
+				<div class="overview-container">
+					<div class="profile-pic"></div>
+					<div class="profile-text">
+						<h1>Profil navn</h1>
+						<ul>
+							<li>Styrketræning</li>
+							<li>Løbetræning</li>
+							<li>Svømning</li>
+						</ul>
+					</div>
+				</div>
+			</div>
             <div class="profile-description">
 				<div class="content">
                     <h2>Beskrivelse</h2>
-                    
 				</div>
 			</div>
             <div class="profile-records">
@@ -56,14 +57,13 @@
                     <h2>Rekorder</h2>
 				</div>
 			</div>
-            </div>
 		</div>
 		  <!-- ////////// kolonne 2 ///////// -->
 		<div class="column-2">
 			<div class="session-wrapper">
-				<h2>Kommende træninger</h2>
+				<h2>Kommende Træninger</h2>
 				<div class="add-session" id="add-session-popup">
-					<p>Add training</p>
+					<p>Tilføj træning</p>
 					<!-- The Modal -->
 					<div class="modal-wrapper">
 						<!-- Modal content -->
@@ -115,21 +115,48 @@
 				</div>
 			</div>
 			<div class="traingingSessions-wrapper">
-				<div class="training">
-					<ul>
-						<li><h3>Today</h3></li>
-						<li><span>Time: 13:30</span> </li>
-						<li>5 deltager</li>
-						<li>Tryk for at deltage</li>
-					</ul>
-				</div>
+				<h3>Dine tilmeldte træninger:</h3>
+			<div class="training">
+				<ul>
+					<li>I dag</li>
+					<li><span>Kl: 13:30</span> </li>
+					<li>5 deltager</li>
+				</ul>
 			</div>
 
-			
+			<div class="training">
+				<ul>
+					<li>I morgen</li>
+					<li><span>Kl: 13:30</span> </li>
+					<li>10 deltager</li>
+				</ul>
+			</div>
+
+			<hr>
+			<h3>Deltag i nye træninger:</h3>
+
+			<div class="training">
+				<ul>
+					<li>I dag</li>
+					<li><span>Kl: 17:30</span> </li>
+					<li>5 deltager</li>
+					<li><button class="add-training-button">Tryk for at deltage</button></li>
+				</ul>
+			</div>
+			<div class="training">
+				<ul>
+					<li>I morgen</li>
+					<li><span>Kl: 18:30</span> </li>
+					<li>5 deltager</li>
+					<li><button class="add-training-button">Tryk for at deltage</button></li>
+				</ul>
+			</div>
+		</div>
+
             <div class="goal-wrapper">
                 <h2>Træningsmål</h2>
                 <div class="add-goal" id="add-goal-popup">
-					<p>Add goal</p>
+					<p>Tilføj mål</p>
 					<!-- The Modal -->
 					<div class="goal-modal-wrapper">
 						<!-- Modal content -->

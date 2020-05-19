@@ -6,7 +6,7 @@
 main {
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: [col-1] 1fr [col-2] minmax(300px, 1fr);
+  grid-template-columns: [col-1] 2fr [col-2] minmax(300px, 1fr);
   height: 100vh;
   grid-template-areas:
       "main sidebar";
@@ -15,72 +15,61 @@ main {
   .column-1 {
     grid-area: main;
     margin-left: 6.5rem;
+    height: clas(100%-5rem);
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    overflow-y: scroll;
+  }
+  .column-1::-webkit-scrollbar {
+    display: none;
   }
   .column-1 h1 {
     margin: 0rem 1rem 1rem 0.5rem;
   }
-  .posts-wrapper {
-    overflow-y: scroll;
-    height: 100vh;
-  }
-  .posts-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-  .posts-wrapper {
-    -ms-overflow-style: none;
-  }
   .profile-overview {
-    overflow-y: scroll;
-    height: 100vh;
-}
-.profile-overview::-webkit-scrollbar{
-    display: none;
-}
-.profile-description{
-    height: 30%;
-    margin-top: 1.5rem;
-}
-.profile-records{
-    height: 30%;
-}
-.profile-info {
-    height: 26%;
-    display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: [col-1] 245px [col-2] minmax(400px, 1fr);
-  grid-template-rows: 100%;
-  grid-template-areas:
-      "pic text";
-}
-.profile-pic {
-    grid-area: pic;
-    background-color: var(--main-navbar-color);
-    border-radius: 100%;
-    width: 100%;
-    height: 100%;
-    min-width: 0;
-    min-height: 0;
-    margin-bottom: 1.5rem;
-}
-.profile-text {
-    grid-area: text;
-    margin-top: auto;
-    margin-bottom: auto;
-    min-width: 0;
-    min-height: 0;
-}
-
-.profile-text p{
-    font-size: 1.5rem;
-}
+    flex: 1;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  .overview-container {
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+    .profile-pic {
+      background-color: var(--main-navbar-color);
+      border-radius: 50%;
+      width: 200px;
+      padding-bottom: 200px;
+      float: left;
+    }
+    .profile-text{
+      margin-left: 2rem;
+    }
+    .profile-text ul li {
+      list-style-type: none;
+      margin-left: -2rem; 
+      margin-top: 0.5rem;
+    }
+  .profile-description{
+    flex: 1;
+    min-height: 100px;
+    margin-bottom: 2rem;
+  }
+  .profile-records{
+    flex: 1;
+    min-height: 100px;
+    margin-bottom: 5rem;
+  }
     .content {
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      width: 97%;
       height: 100%;
       border-radius: 10px;
       position: relative;
-      margin-top: 1.5rem;
       padding-left: 3%;
       padding-top: 0.1rem;
     }
@@ -90,53 +79,38 @@ main {
   .column-2 {
     grid-area: sidebar;
     margin-right: 1.5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
   }
     .session-wrapper, .goal-wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: 1.5rem;
       margin-bottom: 1.5rem;
+      position: relative;
     }
+      .goal-wrapper{
+        margin-top: 1.5rem;
+      }
     .column-2 h2 {
-      margin-top: auto;
-      margin-bottom: auto;
       color: var(--h2-color);
+	    margin: 0.5rem 1rem -0.5rem 0rem;
     }
-      .add-session {
-        background-color: var(--container-background-color);
-        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-        min-width: 8rem;
+      .add-session, .add-goal {
+        width: 8rem;
         border-radius: 20px;
         height: 2rem;
-        position: relative;
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        text-align: left;
         cursor: pointer;
-      }
-      .add-session::after {
-        content: '\002B'; /* css entities : svarer til ' + ' */
-        color: var(--h2-color);
-        font-size: 2rem;
-        position: absolute;
-        right: 1rem;
-        bottom: 0rem;
-      }
-      .add-session p {
-        color: var(--h2-color);
-        position: absolute;
-        font-size: 0.8rem;
-        bottom: -0.3rem;
-        margin-left: 0.7rem;
+        background-color: var(--container-background-color);
+        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
       }
       .add-goal {
-        background-color: var(--container-background-color);
-        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-        min-width: 8rem;
-        border-radius: 20px;
-        height: 2rem;
-        position: relative;
-        cursor: pointer;
+        width: 7rem;
       }
-      .add-goal::after {
+      .add-session::after, .add-goal::after {
         content: '\002B'; /* css entities : svarer til ' + ' */
         color: var(--h2-color);
         font-size: 2rem;
@@ -144,12 +118,16 @@ main {
         right: 1rem;
         bottom: 0rem;
       }
-      .add-goal p {
+      .add-session p, .add-goal p {
+        font-size: 0.8rem;
+        margin-left: 1rem;
         color: var(--h2-color);
         position: absolute;
-        font-size: 0.8rem;
         bottom: -0.3rem;
-        margin-left: 0.7rem;
+      }
+      .add-session:hover, .add-goal:hover {
+        background-color: var(--main-orange-color);
+        color: white;
       }
         /* popup modal (background) */
         .modal-wrapper, .goal-modal-wrapper {
@@ -238,31 +216,67 @@ main {
             opacity: 1;
           }
 
-    .traingingSessions-wrapper {
+    .traingingSessions-wrapper, .traingingGoal-wrapper {
+      flex: 1;
+      overflow-y: scroll;
+      width: 100%;
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      width: 100%;
       border-radius: 10px;
-      position: relative;
-      height: 37vh;
-      padding: 0.1rem;
+    }
+      .traingingSessions-wrapper h3 {
+        margin: 0.5rem 0rem 0rem 1rem;
+        opacity: 0.7;
+        font-size: 1rem;
+      }
+      .traingingGoal-wrapper {
+        margin-bottom: 5rem;
+      }
+    .traingingSessions-wrapper::-webkit-scrollbar, .traingingGoal-wrapper::-webkit-scrollbar {
+      display: none;
     }
       .training {
+        width: 90%;
+        margin-top: 1rem;
+        padding-top: 0.05rem;
+        padding-bottom: 0.05rem;
         background-color: var(--mainContainer-background-color);
         box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-        width: 92.5%;
-        height: auto;
-        border-radius: 15px;
+        border-radius: 10px;
         margin-left: auto;
         margin-right: auto;
         position: relative;
       }
+      .training::after {
+        content: "";
+        position: absolute;
+        background: var(--main-orange-color);
+        width: 0.25rem;
+        height: 2.5rem;
+        border-radius: 2px;
+        left: 0px;
+        top: 0.5rem;
+      }
+      .training ul {
+        list-style: none;
+      }
+      hr {
+        margin-top: 1rem;
+        opacity: 0.3;
+      }
+        .add-training-button {
+          background-color: var(--main-orange-color);
+          border: none;
+          color: white;
+          padding: 0 1.5rem;
+          text-align: center;
+          cursor: pointer;
+        }
 
     .traingingGoal-wrapper {
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
       width: 100%;
-      height: 37vh;
       border-radius: 10px;
       position: relative;
       min-height: 80px;
@@ -288,6 +302,7 @@ main {
     }
     .traingingGoal-wrapper button {
       margin-top: 3rem;
+      height: 2rem;
       background-color: var(--main-orange-color);
       border: none;
       color: white;
@@ -297,7 +312,6 @@ main {
       display: inline-block;
       font-size: 16px;
       cursor: pointer;
-      height: 2rem;
     }
 
 

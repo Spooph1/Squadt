@@ -166,13 +166,17 @@ main {
       .training ul {
         list-style: none;
       }
+      hr {
+        margin-top: 1rem;
+        opacity: 0.3;
+      }
         .add-training-button {
           background-color: var(--main-orange-color);
-        border: none;
-        color: white;
-        padding: 0 1.5rem;
-        text-align: center;
-        cursor: pointer;
+          border: none;
+          color: white;
+          padding: 0 1.5rem;
+          text-align: center;
+          cursor: pointer;
         }
 
     .traingingGoal-wrapper {
@@ -184,7 +188,6 @@ main {
       min-height: 80px;
       display: flex;
       justify-content: center;
-        
     }
     /* progression */
     .progression-container {
