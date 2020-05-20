@@ -40,6 +40,7 @@ main {
     align-items: center;
   }
     .profile-pic {
+      background-image: url("/Hjemmeside2/img/benteProfil.png");
       background-color: var(--main-navbar-color);
       border-radius: 50%;
       width: 200px;

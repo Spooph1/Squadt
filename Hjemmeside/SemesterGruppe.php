@@ -70,8 +70,8 @@
 			</ul>
 		</div>
 	</header>
+
 	<main>
-		
 		<div class="topbar-groups">
                     <?php
                         include_once 'includes/dbh.inc.php';
@@ -85,23 +85,31 @@
                         while($row=$result->fetch_assoc())
                         {
                             ?>    
-                                <div class="groups" id="<?php echo $row['id']?>"></div><p style="display: block;"><?php echo $row['name'] ?></p>
+                                <div class="group-container">
+									<div class="groups" id="<?php echo $row['id']?>"></div>
+									<p><?php echo $row['name'] ?></p>
+								</div>
                             <?php  
                         }
-                    ?>
+					?>
+			<div class="group-container">
+				<div class="add-group"></div>
+				<p>Add group</p>
+			</div>
 		</div>
 		<!-- ////////// kolonne 1 ///////// -->
 		<div class="column-1">
 			<div class="groupName"></div>
 			<!--///////////////////////skriv et opslag////////////////////////////// -->
-				<form action="includes/saveOpslag.inc.php" method="post">
-                    <input type="text" name="titleInput">
-                    <input type="text" name="postInput">
-					<input type="hidden" name="userId" value="<?php echo $user_id ?>" >
-					<div class="inputclass"></div>
-					<button type="submit">post opslag</button>
-				</form>
-				
+				<div class="newPost">
+					<form action="includes/saveOpslag.inc.php" method="post">
+						<input type="text" name="titleInput" placeholder="Titel på besked">
+						<input type="text" name="postInput" placeholder="Besked">
+						<input type="hidden" name="userId" value="<?php echo $user_id ?>" >
+						<div class="inputclass"></div>
+						<button type="submit">Post opslag</button>
+					</form>
+				</div>
 			<div class="posts-wrapper">
 				<!--
 				<div class="content">
@@ -127,16 +135,16 @@
 		 <!-- ////////// kolonne 2 ///////// -->
 		<div class="column-2">
 			<div class="session-wrapper">
-				<h2>Gruppens træninger</h2>
+				<h2>Kommende Træninger</h2>
 				<div class="add-session" id="add-session-popup">
-					<p>Add training</p>
+					<p>Tilføj træning</p>
 					<!-- The Modal -->
 					<div class="modal-wrapper">
 						<!-- Modal content -->
 						<div class="modal-content-wrapper">
 							<div class="modal-header">
 								<h2>Planlæg ny træning</h2>
-								<a href="SemesterGruppe.html"><img src="img/close.png" alt="" class="close-modal"></a>
+								<a href="SemesterProfil.html"><img src="img/close.png" alt="" class="close-modal"></a>
 							</div>
 							<div class="modal-body">
 								<div id="day">
@@ -172,7 +180,7 @@
 								</div>
 							</div>
 							<div class="modal-footer">
-								<a href="SemesterGruppe.html"><h3>Click here when you are done</h3></a>
+								<a href="SemesterProfil.html"><h3>Click here when you are done</h3></a>
 								<img src="img/forward.svg" alt="no image">
 							</div>
 					  </div>
@@ -181,37 +189,110 @@
 				</div>
 			</div>
 			<div class="traingingSessions-wrapper">
-				<div class="training">
-					<ul>
-						<li><h3>Today</h3></li>
-						<li><span>Time: 13:30</span> </li>
-						<li>5 deltager</li>
-						<li>Tryk for at deltage</li>
-					</ul>
-				</div>
+				<h3>Dine tilmeldte træninger:</h3>
+			<div class="training">
+				<ul>
+					<li>I dag</li>
+					<li><span>Kl: 13:30</span> </li>
+					<li>5 deltager</li>
+				</ul>
 			</div>
 
-			<h2>Træningsmål</h2>
+			<div class="training">
+				<ul>
+					<li>I morgen</li>
+					<li><span>Kl: 13:30</span> </li>
+					<li>10 deltager</li>
+				</ul>
+			</div>
 
-			<div class="traingingGoal-wrapper">
-				<div class="progression-container">
-					<div class="progression-bar">50%</div>
-				</div>
-				<br>
-				<button id="progressbar-click">Update your goal</button>
+			<hr>
+			<h3>Deltag i nye træninger:</h3>
+
+			<div class="training">
+				<ul>
+					<li>I dag</li>
+					<li><span>Kl: 17:30</span> </li>
+					<li>5 deltager</li>
+					<li><button class="add-training-button">Tryk for at deltage</button></li>
+				</ul>
+			</div>
+			<div class="training">
+				<ul>
+					<li>I morgen</li>
+					<li><span>Kl: 18:30</span> </li>
+					<li>5 deltager</li>
+					<li><button class="add-training-button">Tryk for at deltage</button></li>
+				</ul>
 			</div>
 		</div>
-        <div id="pageBasedContent">
-        </div>
+
+            <div class="goal-wrapper">
+                <h2>Træningsmål</h2>
+                <div class="add-goal" id="add-goal-popup">
+					<p>Tilføj mål</p>
+					<!-- The Modal -->
+					<div class="goal-modal-wrapper">
+						<!-- Modal content -->
+						<div class="goal-modal-content-wrapper">
+							<div class="goal-modal-header">
+								<h2>Tilføj nyt mål</h2>
+								<a href="SemesterProfil.html"><img src="img/close.png" alt="" class="close-modal"></a>
+							</div>
+							<div class="goal-modal-body">
+								<div id="category">
+									<label>I hvilken kategori er dit mål</label>
+									<select>
+										<option>Bænkpres</option>
+										<option>Pull ups</option>
+										<option>Cardio / Løbebånd</option>
+									</select>
+								</div>
+								<div id="type">
+									<label>Hvad er målet?</label>
+									<select>
+										<option>kl. 6:00</option>
+										<option>kl. 7:00</option>
+										<option>kl. 8:00</option>
+										<option>kl. 9:00</option>
+										<option>kl. 10:00</option>
+										<option>kl. 11:00</option>
+										<option>kl. 12:00</option>
+										<option>kl. 13:00</option>
+										<option>kl. 14:00</option>
+										<option>kl. 15:00</option>
+										<option>kl. 16:00</option>
+										<option>kl. 17:00</option>
+										<option>kl. 18:00</option>
+										<option>kl. 19:00</option>
+										<option>kl. 20:00</option>
+									</select>
+								</div>
+								<div class="planned-goal">
+									<h3></h3>
+								</div>
+							</div>
+							<div class="goal-modal-footer">
+								<a href="SemesterProfil.html"><h3>Click here when you are done</h3></a>
+								<img src="img/forward.svg" alt="no image">
+							</div>
+					  </div>
+					</div>
+				</div>
+                </div>
+			<div class="traingingGoal-wrapper">
+                    <div class="progression-container">
+					<div class="progression-bar">50%</div>
+				    </div>
+				    <br>
+                <button id="progressbar-click">Update your goal</button>
+			</div>
+		</div>
 
 	</main>
     <script src="javascript/index.js" charset="utf-8" defer></script>
     <script src="jquery/jquery.js" ></script>
-    <script>
-    $("body").css ({
-    'padding-top': $(".top-bar").outerHeight() + '800px';
-    })
-    </script>
+
 	<script type="text/javascript">
 	$(()=> {
         $("#groups").click(function(){

@@ -14,60 +14,123 @@ main {
 }
     /* ////////// foreslåede grupper ///////// */
     .topbar-groups {
+      margin: 4rem 1.5rem -5rem 6.5rem;
       grid-area: recommended;
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      margin: 2rem 1.5rem -1rem 6.5rem;
       border-radius: 10px;
       display: flex;
       flex-direction: row;
-      height: 4rem;
-      justify-content:flex-start;
+      height: 4.5rem;
       align-items: center;
       overflow-x: auto;
-      overflow-y: none;
+      overflow-y: hidden;
+      
+    }
+    .group-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
     }
     .groups {
       background-color: var(--main-navbar-color);
       border-radius: 50%;
-    	min-width: 3rem;
+    	width: 3rem;
     	height: 3rem;
-      margin-left: 1rem;
+      margin-bottom: -1rem;
     }
+    .add-group {
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--mainContainer-background-color);
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: -1rem;
+    }
+    .add-group::after {
+        content: '\002B'; /* css entities : svarer til ' + ' */
+        color: var(--h2-color);
+        font-size: 3rem;
+        position: absolute;
+        right: 0.6rem;
+        bottom: 0rem;
+    }
+    
   /* ////////// kolonne 1 ///////// */
   .column-1 {
     grid-area: main;
     margin-left: 6.5rem;
+    height: clas(100%-10rem);
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
   }
   .column-1 h1 {
     margin: 0rem 1rem 1rem 0rem;
   }
+  .newPost {
+    background-color: var(--container-background-color);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+    .newPost input {
+      float: left;
+      padding: 0.3rem;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+    }
+    .newPost button {
+      padding: 0.3rem;
+      background-color: var(--main-orange-color);
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      color: white;
+    }
   .posts-wrapper {
+    flex: 1;
+    height: 300px;
     overflow-y: scroll;
-    height: 72.5vh;
-	border-radius: 10px;
-	background-color: var(--container-background-color);
-	padding-top: 1.5rem;
+    background-color: var(--container-background-color);
+    border-radius: 10px;
+    padding-top: 1rem;
+    margin-bottom: 10rem;
   }
   .posts-wrapper::-webkit-scrollbar {
     display: none;
   }
-  .posts-wrapper {
-    -ms-overflow-style: none;
-  }
     .content {
       background-color: var(--mainContainer-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      width: 95%;
+      width: calc(100%-1rem);
       border-radius: 10px;
       position: relative;
       margin-top: 1.5rem;
-	    margin-left: auto;
-	    margin-right: auto;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      cursor: pointer;
     }
     .content:first-child {
       margin-top: 0rem;
     }
+      .content h2 {
+        margin-bottom: -1rem;
+      }
+      .contentNameDate {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: -0.5rem;
+      }
+      .contentNameDate li:nth-child(2n) {
+        margin-top: 1.4rem;
+        margin-left: 0.5rem;
+      }
       /*  rød tag */
       .content::after {
         content: "";
@@ -94,6 +157,7 @@ main {
         .top-billede {
           position: absolute;
           background-color: var(--main-navbar-color);
+          background-image: url("../img/benteBillede.png");
           border-radius: 50%;
           width: 4rem;
           height: 4rem;
@@ -141,28 +205,38 @@ main {
   .column-2 {
     grid-area: sidebar;
     margin-right: 1.5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
   }
-    .session-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+    .session-wrapper, .goal-wrapper {
+      margin-bottom: 1.5rem;
+      position: relative;
     }
+      .goal-wrapper{
+        margin-top: 1.5rem;
+      }
     .column-2 h2 {
-      margin: 0.6rem 1rem 1rem 0rem;
       color: var(--h2-color);
+	    margin: 0.5rem 1rem -0.5rem 0rem;
     }
-
-      .add-session {
-        background-color: var(--container-background-color);
-        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-        min-width: 8rem;
+      .add-session, .add-goal {
+        width: 8rem;
         border-radius: 20px;
         height: 2rem;
-        position: relative;
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        text-align: left;
         cursor: pointer;
+        background-color: var(--container-background-color);
+        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
       }
-      .add-session::after {
+      .add-goal {
+        width: 7rem;
+      }
+      .add-session::after, .add-goal::after {
         content: '\002B'; /* css entities : svarer til ' + ' */
         color: var(--h2-color);
         font-size: 2rem;
@@ -170,15 +244,19 @@ main {
         right: 1rem;
         bottom: 0rem;
       }
-      .add-session p {
+      .add-session p, .add-goal p {
+        font-size: 0.8rem;
+        margin-left: 1rem;
         color: var(--h2-color);
         position: absolute;
-        font-size: 0.8rem;
         bottom: -0.3rem;
-        margin-left: 0.7rem;
+      }
+      .add-session:hover, .add-goal:hover {
+        background-color: var(--main-orange-color);
+        color: white;
       }
         /* popup modal (background) */
-        .modal-wrapper {
+        .modal-wrapper, .goal-modal-wrapper {
           display: none; /* Hidden by default */
           position: fixed; /* Stay in place */
           justify-content: center;
@@ -191,7 +269,7 @@ main {
           background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
         }
         /* Modal Content */
-        .modal-content-wrapper { 
+        .modal-content-wrapper, .goal-modal-content-wrapper { 
           width: 400px;
           height: 400px;
           padding: 2rem;
@@ -199,7 +277,7 @@ main {
           border-radius: 10px;
           position: relative;
         }
-          .modal-content-wrapper::after {
+          .modal-content-wrapper::after, .goal-modal-content-wrapper::after {
             content: "";
             position: absolute;
             background: var(--main-orange-color);
@@ -209,7 +287,7 @@ main {
             left: 0px;
             top: 1rem;
           }
-          .modal-header {
+          .modal-header, .goal-modal-header {
             width: 100%;
             height: 3rem;
             padding-bottom: 2rem;
@@ -218,34 +296,34 @@ main {
             justify-content: space-between; 
             align-items: center;
           } 
-            .modal-header img {
+            .modal-header img, .goal-modal-header img {
               margin-right: 1.3rem; /* justeret margin så det passer med resten */
               height: 2.5rem;
               width: auto;
               opacity: 0.5;
               cursor: pointer;
             }
-          .modal-body {
+          .modal-body, .goal-modal-body {
             width: 100%;
           }
-            .modal-body {
+            .modal-body, .goal-modal-body {
               padding: 0.5rem;
               font-size: 1.1rem;
               color: var(--body-text-color);
               letter-spacing: 0.5px;
               display: block;
-                text-align: center;
+              text-align: center;
             }
-            .modal-body > div {
+            .modal-body > div, .goal-modal-body > div {
               margin-bottom: 1.5rem;
             }
-            .modal-body label {
+            .modal-body label, .goal-modal-body label {
               display: block;
             }
             label:hover {
               color: var(--main-orange-color);
             }
-          .modal-footer {
+          .modal-footer, .goal-modal-footer {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -254,45 +332,72 @@ main {
             overflow-y: hidden;
             cursor: pointer;
           }
-          .modal-footer img {
+          .modal-footer img, .goal-modal-fotter img {
             margin-left: 1rem;
             height: 2.5rem;
             width: auto;
             opacity: 0.5;
           }
-          .modal-footer img:hover {
+          .modal-footer img:hover, .goal-modal-footer img:hover {
             opacity: 1;
           }
 
-    .traingingSessions-wrapper {
+    .traingingSessions-wrapper, .traingingGoal-wrapper {
+      flex: 1;
+      overflow-y: scroll;
+      width: 100%;
       background-color: var(--container-background-color);
       box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-      width: 100%;
       border-radius: 10px;
-      position: relative;
-      height: auto;
-      padding: 0.1rem;
-      margin-bottom: 3rem;
+    }
+      .traingingSessions-wrapper h3 {
+        margin: 0.5rem 0rem 0rem 1rem;
+        opacity: 0.7;
+        font-size: 1rem;
+      }
+      .traingingGoal-wrapper {
+        margin-bottom: 10rem;
+      }
+    .traingingSessions-wrapper::-webkit-scrollbar, .traingingGoal-wrapper::-webkit-scrollbar {
+      display: none;
     }
       .training {
+        width: 90%;
+        margin-top: 1rem;
+        padding-top: 0.05rem;
+        padding-bottom: 0.05rem;
         background-color: var(--mainContainer-background-color);
         box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-        width: 92.5%;
-        height: auto;
-        border-radius: 15px;
+        border-radius: 10px;
         margin-left: auto;
         margin-right: auto;
-        position: relative; 
+        position: relative;
       }
-.training h3 {
-    margin: 0;
-}
-.training ul {
-    list-style: none;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
+      .training::after {
+        content: "";
+        position: absolute;
+        background: var(--main-orange-color);
+        width: 0.25rem;
+        height: 2.5rem;
+        border-radius: 2px;
+        left: 0px;
+        top: 0.5rem;
+      }
+      .training ul {
+        list-style: none;
+      }
+      hr {
+        margin-top: 1rem;
+        opacity: 0.3;
+      }
+        .add-training-button {
+          background-color: var(--main-orange-color);
+          border: none;
+          color: white;
+          padding: 0 1.5rem;
+          text-align: center;
+          cursor: pointer;
+        }
 
     .traingingGoal-wrapper {
       background-color: var(--container-background-color);
@@ -322,7 +427,8 @@ main {
       color: white;
     }
     .traingingGoal-wrapper button {
-      margin-top: 2rem;
+      margin-top: 3rem;
+      height: 2rem;
       background-color: var(--main-orange-color);
       border: none;
       color: white;
@@ -333,6 +439,7 @@ main {
       font-size: 16px;
       cursor: pointer;
     }
+
 @media only screen and (max-width: 800px) {
   main {
     grid-template-columns: [col-1] minmax(300px, 1fr);

@@ -48,6 +48,11 @@ main {
       margin-right: 0.5rem;
       cursor: pointer;
     }
+    .contentNameDate {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: -0.5rem;
+    }
     .content:first-child {
       margin-top: 0rem;
     }

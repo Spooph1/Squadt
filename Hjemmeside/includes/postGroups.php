@@ -15,9 +15,11 @@
                                     <div class="content-top">
 							        <div class="top-billede"></div>
 							             <ul>
-                                            <li><h3><?php echo $row['users_name']?></h3></li>  
-                                            <li><span><?php echo $row['date']?></span></li>
                                             <li><h2><?php echo $row['title']?></h2></li>
+                                            <div class="contentNameDate">
+                                                <li><h3><?php echo $row['users_name']?></h3></li>
+                                                <li><span><?php echo $row['date']?></span></li>
+                                            </div>
                                             <li><p><?php echo $row['post']?></p></li>
 							             </ul>
                                     </div>

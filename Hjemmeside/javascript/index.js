@@ -57,5 +57,9 @@
 	console.log(groups);
 	console.log(JSONUsers);
 	console.log(JSONGroups);
+	localStorage.setItem("grupper:",JSONGroups);
+	localStorage.setItem("brugere:",JSONUsers);
+
+
 
  
